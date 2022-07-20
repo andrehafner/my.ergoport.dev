@@ -12,6 +12,9 @@ my $html = qq{Content-Type: text/html
 <!DOCTYPE html>
 <html>
   <head>
+
+<form ACTION="ergoportfedit.pl" METHOD="post" enctype="multipart/form-data">
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Ubuntu Terminal</title>
@@ -68,10 +71,11 @@ I'm a css/html hack so I used (thanks!) <a href="https://github.com/fobabs/ubunt
 
 
             <span id="terminal__prompt--bling"> <font color=\"#ff3300\"> <a href="https://my.ergoport.dev/cgi-bin/ergoportedit.pl"><font color=\"#ff3300\">edit your data</a>  
- | <a href="https://my.ergoport.dev/cgi-bin/ergoport.pl?a=$id"><font color=\"#ff3300\">view you ergoport
+ | <a href="https://my.ergoport.dev/cgi-bin/ergoport.pl?a=$id"><font color=\"#ff3300\">view your ergoport
  | <a href="https://my.ergoport.dev/cgi-bin/ergoporttip.pl?a=$id"><font color=\"#ff3300\">tip me!
 
 </span>
+
 
             <span id="terminal__prompt--cursor"></span>
           </div>

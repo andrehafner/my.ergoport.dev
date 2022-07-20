@@ -290,6 +290,12 @@ $array[$CHVAR] = sprintf("%.6f", $array[$CHVAR]);
 $migoreng = "<span id=\"terminal__prompt--bling\">Mi Goreng USD:<font color=\"#3399ff\">\$$array[$CHVAR] </font color=\"#3399ff\"> TT:<font color=\"#ffff00\">$array2[$CHVAR2]</font color=\"#ffff00\"> TUSD:<font color=\"#33cc33\">\$$array3[$CHVAR3]<br></span>";
 }
 
+#tell them how to view random ergoports if they enter the page with no number
+my $explainhow = '';
+
+if ($id eq ''){
+$explainhow = "You didn't specify an ergoport!<br><br>Links in RED below:<br>1. Either create an ergoport<br>2. Or Edit your data to log in (it will take you to your ergoport after)<br>3. Or look at a random ergoport by adding a number to the end of the<br>URL in the toolbar (try with the number 10)!! <br><br>";
+}
 
 #putting the total sum of USD for a user into 2 decimals as well as comma
 $totalsum = sprintf("%.2f", $totalsum);
@@ -328,7 +334,7 @@ my $html = qq{Content-Type: text/html
 
             <span id="terminal__prompt--bling"><br>ERGO Data from Ergodex refreshed on: $array[7] UTC<br></span>
             <span id="terminal__prompt--bling"><br>In Order: Current USD Price, Total Tokens, Total USD in you Tokens<br><br><br></span>
-
+$explainhow
 $erg
 $sigusd
 $sigrsv
