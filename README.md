@@ -14,7 +14,7 @@ It can run on anything that runs Perl and PerlCGI.
 I've tested on Windows (activeperl) and it is currently running on Linux VPS
 
 FUTURE:
-Add Cardano and Cardano Native Asset tracking
+Add ADA and Cardano Native Asset tracking
 
 
 To Do:
