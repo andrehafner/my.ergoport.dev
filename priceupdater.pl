@@ -134,7 +134,7 @@ $Nresponse12 = ($Nresponse / $Nresponse12);
 
 #this is where the database password is loacted
 #my $dbpasswordretreive =  'E:\dbaccess\employer.txt';
-my $dbpasswordretreive = 'this_1S_theergoport';
+my $dbpasswordretreive = 'XXXX';
 
 #get db password
 #my $password = do {
