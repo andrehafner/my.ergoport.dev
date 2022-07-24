@@ -132,18 +132,13 @@ $Nresponse12 = ($Nresponse / $Nresponse12);
 #$Nresponse3 = sprintf("%.4f", $Nresponse3);
 #$Nresponse4 = sprintf("%.4f", $Nresponse4);
 
-#this is where the database password is loacted
-#my $dbpasswordretreive =  'E:\dbaccess\employer.txt';
-my $dbpasswordretreive = 'this_1S_theergoport';
+#this gets the mysql password from a file so we don't have to store it in the script
+open my $fh, '<', '/usr/lib/cgi-bin/sql.txt' or die "Can't open file $!";
+$password = do { local $/; <$fh> };
 
-#get db password
-#my $password = do {
-#  local $/ = undef;
-#  open my $fh, "<", $dbpasswordretreive
-#  or die "could not open $dbpasswordretreive: $!";
-#  <$fh>;
-#};
-
+#remove white spaces in the file for some reason beyond me why it's doing that
+$password =~ s/^\s+//;
+$password =~ s/\s+$//;
 
 #definition of variables
 my $db="ergoport";
@@ -154,7 +149,7 @@ my $user="root";
 #connect to MySQL database
 my $dbh   = DBI->connect ("DBI:mysql:database=$db:host=$host",
   $user,
-  $dbpasswordretreive)
+  $password)
   or die "Can't connect to database: $DBI::errstr\n";
 
 #wite the form data back to the database

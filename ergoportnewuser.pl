@@ -44,7 +44,7 @@ my $html = qq{Content-Type: text/html
             <span id="terminal__prompt--location">~ <p><br></span>
 
             <label for="name"><b>ergoport name</b></label>
-            <input type="text" name="name" maxlength="49" value="this is public"><br><br>
+            <input type="text" name="name" maxlength="49" value=""><br><br>
 
             <label for="pass"><b>access phrase</b></label>
             <input type="password" name="pass" maxlength="49" value=""><br>

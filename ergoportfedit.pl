@@ -105,7 +105,8 @@ my $html = qq{Content-Type: text/html
             <span id="terminal__prompt--user">Edit Port@ubuntu:</span>
             <span id="terminal__prompt--location">~ <p><br></span>
 
-<span id="terminal__prompt--location">Fill in each field with the amount of tokens you are holding! <p><br></span>
+<span id="terminal__prompt--location">Fill in each field with the amount of tokens you are holding!<br>If you want to track a coin you don't have, just enter 0.<br>Leave the ones blank that you don't want to see in your ergport dashboard!
+ <p><br></span>
 
             <input type="text" name="erg" maxlength="49" value="$array[3]">
             <label for="erg"><b>ERG</b><b><b><br></label>
@@ -148,6 +149,42 @@ my $html = qq{Content-Type: text/html
 
             <input type="text" name="migoreng" maxlength="49" value="$array[16]">        
             <label for="migoreng"><b>Mi Goreng</b><b><b><br></label>
+
+            <input type="text" name="cdog" maxlength="49" value="$array[17]">
+            <label for="cdog"><b>CDOG</b><b><b><br></label>
+
+            <input type="text" name="cnt" maxlength="49" value="$array[18]">
+            <label for="cnt"><b>CNT</b><b><b><br></label>
+
+            <input type="text" name="hosky" maxlength="49" value="$array[19]">
+            <label for="hosky"><b>HOSKY</b><b><b><br></label>
+
+            <input type="text" name="milk" maxlength="49" value="$array[20]">
+            <label for="milk"><b>Milk</b><b><b><br></label>
+
+            <input type="text" name="min" maxlength="49" value="$array[21]">
+            <label for="min"><b>Min</b><b><b><br></label>
+
+            <input type="text" name="meld" maxlength="49" value="$array[22]">
+            <label for="meld"><b>MELD</b><b><b><br></label>
+
+            <input type="text" name="lq" maxlength="49" value="$array[23]">
+            <label for="lq"><b>LQ</b><b><b><br></label>
+
+            <input type="text" name="dana" maxlength="49" value="$array[24]">
+            <label for="dana"><b>DANA</b><b><b><br></label>
+
+            <input type="text" name="pavia" maxlength="49" value="$array[25]">
+            <label for="pavia"><b>PAVIA</b><b><b><br></label>
+
+            <input type="text" name="cneta" maxlength="49" value="$array[26]">
+            <label for="cneta"><b>cNETA</b><b><b><br></label>
+
+            <input type="text" name="ctosi" maxlength="49" value="$array[27]">
+            <label for="ctosi"><b>cTOSI</b><b><b><br></label>
+
+            <input type="text" name="ada" maxlength="49" value="$array[28]">
+            <label for="ada"><b>ADA</b><b><b><br></label>
 
 <input type="hidden" name="name" maxlength="49" value="$name">
 <input type="hidden" name="pass" maxlength="49" value="$pass">

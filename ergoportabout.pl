@@ -40,17 +40,12 @@ my $html = qq{Content-Type: text/html
             <span id="terminal__prompt--user">huh?@ubuntu:</span>
             <span id="terminal__prompt--location">~ <p> </span>
 
-<span id="terminal__prompt--bling"><a href="https://my.ergoport.dev/cgi-bin/ergoportnewuser.pl"><font color=\"#ff3300\">create an ergoport account, click on me! </font color=\"#ff3300\"><br><br></span>
+<span id="terminal__prompt--bling"><a href="https://my.ergoport.dev/cgi-bin/ergoportnewuser.pl"><font color=\"#ff3300\">--> create an ergoport account, click on me! <-- </font color=\"#ff3300\"><br><br></span>
 
 
             <span id="terminal__prompt--bling"><font color=\"#08C7FF\">Why?</font color=\"#08C7FF\"><br>
 I wanted a FAST way to view all my ERGO/Cardano assets in one shot<br>
 without adding them up in a wallet or needing an extension<br><br>
-I made this site in the worst way possible<br>
-perl on the web also known as perlcgi!<br><br>
-However, it is what I know (barely) and it allows me to <br>
-grab things from DEXs and chop the heck out of them<br>
-to give you what you see here!<br><br>
 
 <font color=\"#08C7FF\"> What is this running on and how does it work?<br></font color=\"#ff3300\">
 Linux VPM 4 core 8GB 160SSD (lets see if it keeps up)<br>

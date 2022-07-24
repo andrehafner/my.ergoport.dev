@@ -94,6 +94,21 @@ my $erdoge = '';
 my $lunadog = '';
 my $migoreng = '';
 
+#cardano chain
+my $cdog = '';
+my $cnt = '';
+my $hosky = '';
+my $milk = '';
+my $min = '';
+my $meld = '';
+my $lq = '';
+my $dana = '';
+my $pavia = '';
+my $cneta = '';
+my $ctosi = '';
+my $ada = '';
+
+
 my @array3 = @array2;
 my @array4 = @array2;
 my $totalsum = '';
@@ -170,7 +185,7 @@ $array3[$CHVAR3] = sprintf("%.2f", $array3[$CHVAR3]);
 $array3[$CHVAR3] = format_number ($array3[$CHVAR3]);
 $array2[$CHVAR2] = format_number ($array2[$CHVAR2]);
 $array[$CHVAR] = sprintf("%.6f", $array[$CHVAR]);
-$etosi = "<span id=\"terminal__prompt--bling\">eTosiD USD:<font color=\"#3399ff\">\$$array[$CHVAR] </font color=\"#3399ff\"> TT:<font color=\"#ffff00\">$array2[$CHVAR2]</font color=\"#ffff00\"> TUSD:<font color=\"#33cc33\">\$$array3[$CHVAR3]<br></span>";
+$etosi = "<span id=\"terminal__prompt--bling\">eTosi USD:<font color=\"#3399ff\">\$$array[$CHVAR] </font color=\"#3399ff\"> TT:<font color=\"#ffff00\">$array2[$CHVAR2]</font color=\"#ffff00\"> TUSD:<font color=\"#33cc33\">\$$array3[$CHVAR3]<br></span>";
 }
 
 if ($array2[8] ne ''){
@@ -290,6 +305,163 @@ $array[$CHVAR] = sprintf("%.6f", $array[$CHVAR]);
 $migoreng = "<span id=\"terminal__prompt--bling\">Mi Goreng USD:<font color=\"#3399ff\">\$$array[$CHVAR] </font color=\"#3399ff\"> TT:<font color=\"#ffff00\">$array2[$CHVAR2]</font color=\"#ffff00\"> TUSD:<font color=\"#33cc33\">\$$array3[$CHVAR3]<br></span>";
 }
 
+if ($array2[17] ne ''){
+$CHVAR = '17';
+$CHVAR2 = '17';
+$CHVAR3 = '17';
+$array3[$CHVAR3] = $array[$CHVAR] * $array2[$CHVAR3];
+$totalsum = ($array3[$CHVAR2] + $totalsum);
+$array3[$CHVAR3] = sprintf("%.2f", $array3[$CHVAR3]);
+$array3[$CHVAR3] = format_number ($array3[$CHVAR3]);
+$array2[$CHVAR2] = format_number ($array2[$CHVAR2]);
+$array[$CHVAR] = sprintf("%.6f", $array[$CHVAR]);
+$cdog = "<span id=\"terminal__prompt--bling\">CDOG USD:<font color=\"#3399ff\">\$$array[$CHVAR] </font color=\"#3399ff\"> TT:<font color=\"#ffff00\">$array2[$CHVAR2]</font color=\"#ffff00\"> TUSD:<font color=\"#33cc33\">\$$array3[$CHVAR3]<br></span>";
+}
+
+if ($array2[18] ne ''){
+$CHVAR = '18';
+$CHVAR2 = '18';
+$CHVAR3 = '18';
+$array3[$CHVAR3] = $array[$CHVAR] * $array2[$CHVAR3];
+$totalsum = ($array3[$CHVAR2] + $totalsum);
+$array3[$CHVAR3] = sprintf("%.2f", $array3[$CHVAR3]);
+$array3[$CHVAR3] = format_number ($array3[$CHVAR3]);
+$array2[$CHVAR2] = format_number ($array2[$CHVAR2]);
+$array[$CHVAR] = sprintf("%.6f", $array[$CHVAR]);
+$cnt = "<span id=\"terminal__prompt--bling\">CNT USD:<font color=\"#3399ff\">\$$array[$CHVAR] </font color=\"#3399ff\"> TT:<font color=\"#ffff00\">$array2[$CHVAR2]</font color=\"#ffff00\"> TUSD:<font color=\"#33cc33\">\$$array3[$CHVAR3]<br></span>";
+}
+
+if ($array2[19] ne ''){
+$CHVAR = '19';
+$CHVAR2 = '19';
+$CHVAR3 = '19';
+$array3[$CHVAR3] = $array[$CHVAR] * $array2[$CHVAR3];
+$totalsum = ($array3[$CHVAR2] + $totalsum);
+$array3[$CHVAR3] = sprintf("%.2f", $array3[$CHVAR3]);
+$array3[$CHVAR3] = format_number ($array3[$CHVAR3]);
+$array2[$CHVAR2] = format_number ($array2[$CHVAR2]);
+$array[$CHVAR] = sprintf("%.6f", $array[$CHVAR]);
+$hosky = "<span id=\"terminal__prompt--bling\">HOSKY USD:<font color=\"#3399ff\">\$$array[$CHVAR] </font color=\"#3399ff\"> TT:<font color=\"#ffff00\">$array2[$CHVAR2]</font color=\"#ffff00\"> TUSD:<font color=\"#33cc33\">\$$array3[$CHVAR3]<br></span>";
+}
+
+if ($array2[20] ne ''){
+$CHVAR = '20';
+$CHVAR2 = '20';
+$CHVAR3 = '20';
+$array3[$CHVAR3] = $array[$CHVAR] * $array2[$CHVAR3];
+$totalsum = ($array3[$CHVAR2] + $totalsum);
+$array3[$CHVAR3] = sprintf("%.2f", $array3[$CHVAR3]);
+$array3[$CHVAR3] = format_number ($array3[$CHVAR3]);
+$array2[$CHVAR2] = format_number ($array2[$CHVAR2]);
+$array[$CHVAR] = sprintf("%.6f", $array[$CHVAR]);
+$milk = "<span id=\"terminal__prompt--bling\">MILK USD:<font color=\"#3399ff\">\$$array[$CHVAR] </font color=\"#3399ff\"> TT:<font color=\"#ffff00\">$array2[$CHVAR2]</font color=\"#ffff00\"> TUSD:<font color=\"#33cc33\">\$$array3[$CHVAR3]<br></span>";
+}
+
+if ($array2[21] ne ''){
+$CHVAR = '21';
+$CHVAR2 = '21';
+$CHVAR3 = '21';
+$array3[$CHVAR3] = $array[$CHVAR] * $array2[$CHVAR3];
+$totalsum = ($array3[$CHVAR2] + $totalsum);
+$array3[$CHVAR3] = sprintf("%.2f", $array3[$CHVAR3]);
+$array3[$CHVAR3] = format_number ($array3[$CHVAR3]);
+$array2[$CHVAR2] = format_number ($array2[$CHVAR2]);
+$array[$CHVAR] = sprintf("%.6f", $array[$CHVAR]);
+$min = "<span id=\"terminal__prompt--bling\">MIN USD:<font color=\"#3399ff\">\$$array[$CHVAR] </font color=\"#3399ff\"> TT:<font color=\"#ffff00\">$array2[$CHVAR2]</font color=\"#ffff00\"> TUSD:<font color=\"#33cc33\">\$$array3[$CHVAR3]<br></span>";
+}
+
+if ($array2[22] ne ''){
+$CHVAR = '22';
+$CHVAR2 = '22';
+$CHVAR3 = '22';
+$array3[$CHVAR3] = $array[$CHVAR] * $array2[$CHVAR3];
+$totalsum = ($array3[$CHVAR2] + $totalsum);
+$array3[$CHVAR3] = sprintf("%.2f", $array3[$CHVAR3]);
+$array3[$CHVAR3] = format_number ($array3[$CHVAR3]);
+$array2[$CHVAR2] = format_number ($array2[$CHVAR2]);
+$array[$CHVAR] = sprintf("%.6f", $array[$CHVAR]);
+$meld = "<span id=\"terminal__prompt--bling\">MELD USD:<font color=\"#3399ff\">\$$array[$CHVAR] </font color=\"#3399ff\"> TT:<font color=\"#ffff00\">$array2[$CHVAR2]</font color=\"#ffff00\"> TUSD:<font color=\"#33cc33\">\$$array3[$CHVAR3]<br></span>";
+}
+
+if ($array2[23] ne ''){
+$CHVAR = '23';
+$CHVAR2 = '23';
+$CHVAR3 = '23';
+$array3[$CHVAR3] = $array[$CHVAR] * $array2[$CHVAR3];
+$totalsum = ($array3[$CHVAR2] + $totalsum);
+$array3[$CHVAR3] = sprintf("%.2f", $array3[$CHVAR3]);
+$array3[$CHVAR3] = format_number ($array3[$CHVAR3]);
+$array2[$CHVAR2] = format_number ($array2[$CHVAR2]);
+$array[$CHVAR] = sprintf("%.6f", $array[$CHVAR]);
+$lq = "<span id=\"terminal__prompt--bling\">LQ USD:<font color=\"#3399ff\">\$$array[$CHVAR] </font color=\"#3399ff\"> TT:<font color=\"#ffff00\">$array2[$CHVAR2]</font color=\"#ffff00\"> TUSD:<font color=\"#33cc33\">\$$array3[$CHVAR3]<br></span>";
+}
+
+if ($array2[24] ne ''){
+$CHVAR = '24';
+$CHVAR2 = '24';
+$CHVAR3 = '24';
+$array3[$CHVAR3] = $array[$CHVAR] * $array2[$CHVAR3];
+$totalsum = ($array3[$CHVAR2] + $totalsum);
+$array3[$CHVAR3] = sprintf("%.2f", $array3[$CHVAR3]);
+$array3[$CHVAR3] = format_number ($array3[$CHVAR3]);
+$array2[$CHVAR2] = format_number ($array2[$CHVAR2]);
+$array[$CHVAR] = sprintf("%.6f", $array[$CHVAR]);
+$dana = "<span id=\"terminal__prompt--bling\">DANA USD:<font color=\"#3399ff\">\$$array[$CHVAR] </font color=\"#3399ff\"> TT:<font color=\"#ffff00\">$array2[$CHVAR2]</font color=\"#ffff00\"> TUSD:<font color=\"#33cc33\">\$$array3[$CHVAR3]<br></span>";
+}
+
+if ($array2[25] ne ''){
+$CHVAR = '25';
+$CHVAR2 = '25';
+$CHVAR3 = '25';
+$array3[$CHVAR3] = $array[$CHVAR] * $array2[$CHVAR3];
+$totalsum = ($array3[$CHVAR2] + $totalsum);
+$array3[$CHVAR3] = sprintf("%.2f", $array3[$CHVAR3]);
+$array3[$CHVAR3] = format_number ($array3[$CHVAR3]);
+$array2[$CHVAR2] = format_number ($array2[$CHVAR2]);
+$array[$CHVAR] = sprintf("%.6f", $array[$CHVAR]);
+$pavia = "<span id=\"terminal__prompt--bling\">PAVIA USD:<font color=\"#3399ff\">\$$array[$CHVAR] </font color=\"#3399ff\"> TT:<font color=\"#ffff00\">$array2[$CHVAR2]</font color=\"#ffff00\"> TUSD:<font color=\"#33cc33\">\$$array3[$CHVAR3]<br></span>";
+}
+
+if ($array2[26] ne ''){
+$CHVAR = '26';
+$CHVAR2 = '26';
+$CHVAR3 = '26';
+$array3[$CHVAR3] = $array[$CHVAR] * $array2[$CHVAR3];
+$totalsum = ($array3[$CHVAR2] + $totalsum);
+$array3[$CHVAR3] = sprintf("%.2f", $array3[$CHVAR3]);
+$array3[$CHVAR3] = format_number ($array3[$CHVAR3]);
+$array2[$CHVAR2] = format_number ($array2[$CHVAR2]);
+$array[$CHVAR] = sprintf("%.6f", $array[$CHVAR]);
+$cneta = "<span id=\"terminal__prompt--bling\">cNETA USD:<font color=\"#3399ff\">\$$array[$CHVAR] </font color=\"#3399ff\"> TT:<font color=\"#ffff00\">$array2[$CHVAR2]</font color=\"#ffff00\"> TUSD:<font color=\"#33cc33\">\$$array3[$CHVAR3]<br></span>";
+}
+
+if ($array2[27] ne ''){
+$CHVAR = '27';
+$CHVAR2 = '27';
+$CHVAR3 = '27';
+$array3[$CHVAR3] = $array[$CHVAR] * $array2[$CHVAR3];
+$totalsum = ($array3[$CHVAR2] + $totalsum);
+$array3[$CHVAR3] = sprintf("%.2f", $array3[$CHVAR3]);
+$array3[$CHVAR3] = format_number ($array3[$CHVAR3]);
+$array2[$CHVAR2] = format_number ($array2[$CHVAR2]);
+$array[$CHVAR] = sprintf("%.6f", $array[$CHVAR]);
+$ctosi = "<span id=\"terminal__prompt--bling\">cTOSI USD:<font color=\"#3399ff\">\$$array[$CHVAR] </font color=\"#3399ff\"> TT:<font color=\"#ffff00\">$array2[$CHVAR2]</font color=\"#ffff00\"> TUSD:<font color=\"#33cc33\">\$$array3[$CHVAR3]<br></span>";
+}
+
+if ($array2[28] ne ''){
+$CHVAR = '28';
+$CHVAR2 = '28';
+$CHVAR3 = '28';
+$array3[$CHVAR3] = $array[$CHVAR] * $array2[$CHVAR3];
+$totalsum = ($array3[$CHVAR2] + $totalsum);
+$array3[$CHVAR3] = sprintf("%.2f", $array3[$CHVAR3]);
+$array3[$CHVAR3] = format_number ($array3[$CHVAR3]);
+$array2[$CHVAR2] = format_number ($array2[$CHVAR2]);
+$array[$CHVAR] = sprintf("%.6f", $array[$CHVAR]);
+$ada = "<span id=\"terminal__prompt--bling\">ADA USD:<font color=\"#3399ff\">\$$array[$CHVAR] </font color=\"#3399ff\"> TT:<font color=\"#ffff00\">$array2[$CHVAR2]</font color=\"#ffff00\"> TUSD:<font color=\"#33cc33\">\$$array3[$CHVAR3]<br></span>";
+}
+
+
 #tell them how to view random ergoports if they enter the page with no number
 my $explainhow = '';
 
@@ -332,8 +504,14 @@ my $html = qq{Content-Type: text/html
             <span id="terminal__prompt--user">$array2[1]@ubuntu:</span>
             <span id="terminal__prompt--location">~ <p> </span>
 
-            <span id="terminal__prompt--bling"><br>ERGO Data from Ergodex refreshed on: $array[7] UTC<br></span>
-            <span id="terminal__prompt--bling"><br>In Order: Current USD Price, Total Tokens, Total USD in you Tokens<br><br><br></span>
+            <span id="terminal__prompt--bling"><br>ERGO Data from Ergodex refreshed every minute,<br> last on:<font color=\"#696969\"> $array[7] UTC </font color=\"#696969\">(CURRENT API ISSUE, 1 hour DELAYS)</span>
+            <span id="terminal__prompt--bling"><br>Cardano Data from Minswap refreshed every minute,<br> last on:<font color=\"#696969\"> $array[16] UTC<br></span>
+
+            <span id="terminal__prompt--bling"><br>In Order: Current USD Price, Total Tokens, Total USD in your Tokens<br><br><br></span>
+
+            <span id="terminal__prompt--bling"><br>**ERG Tokens**<br></span>
+
+
 $explainhow
 $erg
 $sigusd
@@ -349,9 +527,27 @@ $comet
 $erdoge
 $lunadog
 $migoreng
+
+<span id="terminal__prompt--bling"><br>**CARDANO Tokens (coming in a few days)**<br></span>
+
+$cdog
+$cnt
+$hosky
+$milk
+$min
+$meld
+$lq
+$dana
+$pavia
+$cneta
+$ctosi
+$ada
+
+
+
             <span id="terminal__prompt--bling"><br>Total USD: <font color=\"#ff007b\"> \$$totalsum <br><br></span>
 
-<span id="terminal__prompt--bling"><br><font color=\"#ffffff\"><br> *share your ergoport by simply copying the link in your brower address bar!<br><br></span>
+<span id="terminal__prompt--bling"><br><font color=\"#ffffff\"><br> *share your ergoport by simply copying the link in your browser address bar!<br><br></span>
 
 
             <span id="terminal__prompt--bling"> <font color=\"#ff3300\"> <a href="https://my.ergoport.dev/cgi-bin/ergoportedit.pl"><font color=\"#ff3300\">edit your data</a>  

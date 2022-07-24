@@ -30,7 +30,18 @@ $comet = $query->param("comet");
 $erdoge = $query->param("erdoge");
 $lunadog = $query->param("lunadog");
 $migoreng = $query->param("migoreng");
-
+$cdog = $query->param("cdog");
+$cnt = $query->param("cnt");
+$hosky = $query->param("hosky");
+$milk = $query->param("milk");
+$min = $query->param("min");
+$meld = $query->param("meld");
+$lq = $query->param("lq");
+$dana = $query->param("dana");
+$pavia = $query->param("pavia");
+$cneta = $query->param("cneta");
+$ctosi = $query->param("ctosi");
+$ada = $query->param("ada");
 
 #this is for testing so I can see outputs in the browser
 #$|=1;            # Flush immediately.
@@ -69,7 +80,19 @@ egio='$egio',
 comet='$comet',
 erdoge='$erdoge',
 lunadog='$lunadog',
-migoreng='$migoreng' where username='$name' and password=MD5('$pass');";
+migoreng='$migoreng',
+CDOG='$cdog',
+CNT='$cnt',
+HOSKY='$hosky',
+MILK='$milk',
+MIN='$min',
+MELD='$meld',
+LQ='$lq',
+DANA='$dana',
+PAVIA='$pavia',
+cneta='$cneta',
+ctosi='$ctosi',
+ada='$ada' where username='$name' and password=MD5('$pass');";
 
 #prepare the query
 my $sth = $dbh->prepare($sql);
