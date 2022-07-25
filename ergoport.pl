@@ -112,7 +112,8 @@ my $ada = '';
 my @array3 = @array2;
 my @array4 = @array2;
 my $totalsum = '';
-
+my $totalsumERGO = '';
+my $totalsumCARDANO = '';
 
 #statements to create HTML with price and count data for user, if no data is in the table then it returns nothing thus not showing up on the html output
 if ($array2[3] ne ''){
@@ -124,6 +125,7 @@ $CHVAR3 = '3';
 $array3[$CHVAR2] = $array[$CHVAR] * $array2[$CHVAR2];
 #lets do a rolling sum for all data totals
 $totalsum = ($array3[$CHVAR2] + $totalsum);
+$totalsumERGO = ($array3[$CHVAR2] + $totalsumERGO);
 #lets get it down to 2 decimals
 $array3[$CHVAR2] = sprintf("%.2f", $array3[$CHVAR2]);
 #lets give it some commmas so it looks like a number
@@ -142,6 +144,7 @@ $CHVAR2 = '4';
 $CHVAR3 = '4';
 $array3[$CHVAR3] = $array[$CHVAR] * $array2[$CHVAR3];
 $totalsum = ($array3[$CHVAR2] + $totalsum);
+$totalsumERGO = ($array3[$CHVAR2] + $totalsumERGO);
 $array3[$CHVAR3] = sprintf("%.2f", $array3[$CHVAR3]);
 $array3[$CHVAR3] = format_number ($array3[$CHVAR3]);
 $array2[$CHVAR2] = format_number ($array2[$CHVAR2]);
@@ -155,6 +158,7 @@ $CHVAR2 = '5';
 $CHVAR3 = '5';
 $array3[$CHVAR3] = $array[$CHVAR] * $array2[$CHVAR3];
 $totalsum = ($array3[$CHVAR2] + $totalsum);
+$totalsumERGO = ($array3[$CHVAR2] + $totalsumERGO);
 $array3[$CHVAR3] = sprintf("%.2f", $array3[$CHVAR3]);
 $array3[$CHVAR3] = format_number ($array3[$CHVAR3]);
 $array2[$CHVAR2] = format_number ($array2[$CHVAR2]);
@@ -168,6 +172,7 @@ $CHVAR2 = '6';
 $CHVAR3 = '6';
 $array3[$CHVAR3] = $array[$CHVAR] * $array2[$CHVAR3];
 $totalsum = ($array3[$CHVAR2] + $totalsum);
+$totalsumERGO = ($array3[$CHVAR2] + $totalsumERGO);
 $array3[$CHVAR3] = sprintf("%.2f", $array3[$CHVAR3]);
 $array3[$CHVAR3] = format_number ($array3[$CHVAR3]);
 $array2[$CHVAR2] = format_number ($array2[$CHVAR2]);
@@ -181,6 +186,7 @@ $CHVAR2 = '7';
 $CHVAR3 = '7';
 $array3[$CHVAR3] = $array[$CHVAR] * $array2[$CHVAR3];
 $totalsum = ($array3[$CHVAR2] + $totalsum);
+$totalsumERGO = ($array3[$CHVAR2] + $totalsumERGO);
 $array3[$CHVAR3] = sprintf("%.2f", $array3[$CHVAR3]);
 $array3[$CHVAR3] = format_number ($array3[$CHVAR3]);
 $array2[$CHVAR2] = format_number ($array2[$CHVAR2]);
@@ -194,6 +200,7 @@ $CHVAR2 = '8';
 $CHVAR3 = '8';
 $array3[$CHVAR3] = $array[$CHVAR] * $array2[$CHVAR3];
 $totalsum = ($array3[$CHVAR2] + $totalsum);
+$totalsumERGO = ($array3[$CHVAR2] + $totalsumERGO);
 $array3[$CHVAR3] = sprintf("%.2f", $array3[$CHVAR3]);
 $array3[$CHVAR3] = format_number ($array3[$CHVAR3]);
 $array2[$CHVAR2] = format_number ($array2[$CHVAR2]);
@@ -207,6 +214,7 @@ $CHVAR2 = '9';
 $CHVAR3 = '9';
 $array3[$CHVAR3] = $array[$CHVAR] * $array2[$CHVAR3];
 $totalsum = ($array3[$CHVAR2] + $totalsum);
+$totalsumERGO = ($array3[$CHVAR2] + $totalsumERGO);
 $array3[$CHVAR3] = sprintf("%.2f", $array3[$CHVAR3]);
 $array3[$CHVAR3] = format_number ($array3[$CHVAR3]);
 $array2[$CHVAR2] = format_number ($array2[$CHVAR2]);
@@ -220,6 +228,7 @@ $CHVAR2 = '10';
 $CHVAR3 = '10';
 $array3[$CHVAR3] = $array[$CHVAR] * $array2[$CHVAR3];
 $totalsum = ($array3[$CHVAR2] + $totalsum);
+$totalsumERGO = ($array3[$CHVAR2] + $totalsumERGO);
 $array3[$CHVAR3] = sprintf("%.2f", $array3[$CHVAR3]);
 $array3[$CHVAR3] = format_number ($array3[$CHVAR3]);
 $array2[$CHVAR2] = format_number ($array2[$CHVAR2]);
@@ -233,6 +242,7 @@ $CHVAR2 = '11';
 $CHVAR3 = '11';
 $array3[$CHVAR3] = $array[$CHVAR] * $array2[$CHVAR3];
 $totalsum = ($array3[$CHVAR2] + $totalsum);
+$totalsumERGO = ($array3[$CHVAR2] + $totalsumERGO);
 $array3[$CHVAR3] = sprintf("%.2f", $array3[$CHVAR3]);
 $array3[$CHVAR3] = format_number ($array3[$CHVAR3]);
 $array2[$CHVAR2] = format_number ($array2[$CHVAR2]);
@@ -246,6 +256,7 @@ $CHVAR2 = '12';
 $CHVAR3 = '12';
 $array3[$CHVAR3] = $array[$CHVAR] * $array2[$CHVAR3];
 $totalsum = ($array3[$CHVAR2] + $totalsum);
+$totalsumERGO = ($array3[$CHVAR2] + $totalsumERGO);
 $array3[$CHVAR3] = sprintf("%.2f", $array3[$CHVAR3]);
 $array3[$CHVAR3] = format_number ($array3[$CHVAR3]);
 $array2[$CHVAR2] = format_number ($array2[$CHVAR2]);
@@ -259,6 +270,7 @@ $CHVAR2 = '13';
 $CHVAR3 = '13';
 $array3[$CHVAR3] = $array[$CHVAR] * $array2[$CHVAR3];
 $totalsum = ($array3[$CHVAR2] + $totalsum);
+$totalsumERGO = ($array3[$CHVAR2] + $totalsumERGO);
 $array3[$CHVAR3] = sprintf("%.2f", $array3[$CHVAR3]);
 $array3[$CHVAR3] = format_number ($array3[$CHVAR3]);
 $array2[$CHVAR2] = format_number ($array2[$CHVAR2]);
@@ -272,6 +284,7 @@ $CHVAR2 = '14';
 $CHVAR3 = '14';
 $array3[$CHVAR3] = $array[$CHVAR] * $array2[$CHVAR3];
 $totalsum = ($array3[$CHVAR2] + $totalsum);
+$totalsumERGO = ($array3[$CHVAR2] + $totalsumERGO);
 $array3[$CHVAR3] = sprintf("%.2f", $array3[$CHVAR3]);
 $array3[$CHVAR3] = format_number ($array3[$CHVAR3]);
 $array2[$CHVAR2] = format_number ($array2[$CHVAR2]);
@@ -285,6 +298,7 @@ $CHVAR2 = '15';
 $CHVAR3 = '15';
 $array3[$CHVAR3] = $array[$CHVAR] * $array2[$CHVAR3];
 $totalsum = ($array3[$CHVAR2] + $totalsum);
+$totalsumERGO = ($array3[$CHVAR2] + $totalsumERGO);
 $array3[$CHVAR3] = sprintf("%.2f", $array3[$CHVAR3]);
 $array3[$CHVAR3] = format_number ($array3[$CHVAR3]);
 $array2[$CHVAR2] = format_number ($array2[$CHVAR2]);
@@ -298,6 +312,7 @@ $CHVAR2 = '16';
 $CHVAR3 = '16';
 $array3[$CHVAR3] = $array[$CHVAR] * $array2[$CHVAR3];
 $totalsum = ($array3[$CHVAR2] + $totalsum);
+$totalsumERGO = ($array3[$CHVAR2] + $totalsumERGO);
 $array3[$CHVAR3] = sprintf("%.2f", $array3[$CHVAR3]);
 $array3[$CHVAR3] = format_number ($array3[$CHVAR3]);
 $array2[$CHVAR2] = format_number ($array2[$CHVAR2]);
@@ -324,6 +339,7 @@ $CHVAR2 = '18';
 $CHVAR3 = '18';
 $array3[$CHVAR3] = $array[$CHVAR] * $array2[$CHVAR3];
 $totalsum = ($array3[$CHVAR2] + $totalsum);
+$totalsumCARDANO = ($array3[$CHVAR2] + $totalsumCARDANO);
 $array3[$CHVAR3] = sprintf("%.2f", $array3[$CHVAR3]);
 $array3[$CHVAR3] = format_number ($array3[$CHVAR3]);
 $array2[$CHVAR2] = format_number ($array2[$CHVAR2]);
@@ -337,6 +353,7 @@ $CHVAR2 = '19';
 $CHVAR3 = '19';
 $array3[$CHVAR3] = $array[$CHVAR] * $array2[$CHVAR3];
 $totalsum = ($array3[$CHVAR2] + $totalsum);
+$totalsumCARDANO = ($array3[$CHVAR2] + $totalsumCARDANO);
 $array3[$CHVAR3] = sprintf("%.2f", $array3[$CHVAR3]);
 $array3[$CHVAR3] = format_number ($array3[$CHVAR3]);
 $array2[$CHVAR2] = format_number ($array2[$CHVAR2]);
@@ -350,6 +367,7 @@ $CHVAR2 = '20';
 $CHVAR3 = '20';
 $array3[$CHVAR3] = $array[$CHVAR] * $array2[$CHVAR3];
 $totalsum = ($array3[$CHVAR2] + $totalsum);
+$totalsumCARDANO = ($array3[$CHVAR2] + $totalsumCARDANO);
 $array3[$CHVAR3] = sprintf("%.2f", $array3[$CHVAR3]);
 $array3[$CHVAR3] = format_number ($array3[$CHVAR3]);
 $array2[$CHVAR2] = format_number ($array2[$CHVAR2]);
@@ -363,6 +381,7 @@ $CHVAR2 = '21';
 $CHVAR3 = '21';
 $array3[$CHVAR3] = $array[$CHVAR] * $array2[$CHVAR3];
 $totalsum = ($array3[$CHVAR2] + $totalsum);
+$totalsumCARDANO = ($array3[$CHVAR2] + $totalsumCARDANO);
 $array3[$CHVAR3] = sprintf("%.2f", $array3[$CHVAR3]);
 $array3[$CHVAR3] = format_number ($array3[$CHVAR3]);
 $array2[$CHVAR2] = format_number ($array2[$CHVAR2]);
@@ -376,6 +395,7 @@ $CHVAR2 = '22';
 $CHVAR3 = '22';
 $array3[$CHVAR3] = $array[$CHVAR] * $array2[$CHVAR3];
 $totalsum = ($array3[$CHVAR2] + $totalsum);
+$totalsumCARDANO = ($array3[$CHVAR2] + $totalsumCARDANO);
 $array3[$CHVAR3] = sprintf("%.2f", $array3[$CHVAR3]);
 $array3[$CHVAR3] = format_number ($array3[$CHVAR3]);
 $array2[$CHVAR2] = format_number ($array2[$CHVAR2]);
@@ -389,6 +409,7 @@ $CHVAR2 = '23';
 $CHVAR3 = '23';
 $array3[$CHVAR3] = $array[$CHVAR] * $array2[$CHVAR3];
 $totalsum = ($array3[$CHVAR2] + $totalsum);
+$totalsumCARDANO = ($array3[$CHVAR2] + $totalsumCARDANO);
 $array3[$CHVAR3] = sprintf("%.2f", $array3[$CHVAR3]);
 $array3[$CHVAR3] = format_number ($array3[$CHVAR3]);
 $array2[$CHVAR2] = format_number ($array2[$CHVAR2]);
@@ -402,6 +423,7 @@ $CHVAR2 = '24';
 $CHVAR3 = '24';
 $array3[$CHVAR3] = $array[$CHVAR] * $array2[$CHVAR3];
 $totalsum = ($array3[$CHVAR2] + $totalsum);
+$totalsumCARDANO = ($array3[$CHVAR2] + $totalsumCARDANO);
 $array3[$CHVAR3] = sprintf("%.2f", $array3[$CHVAR3]);
 $array3[$CHVAR3] = format_number ($array3[$CHVAR3]);
 $array2[$CHVAR2] = format_number ($array2[$CHVAR2]);
@@ -415,6 +437,7 @@ $CHVAR2 = '25';
 $CHVAR3 = '25';
 $array3[$CHVAR3] = $array[$CHVAR] * $array2[$CHVAR3];
 $totalsum = ($array3[$CHVAR2] + $totalsum);
+$totalsumCARDANO = ($array3[$CHVAR2] + $totalsumCARDANO);
 $array3[$CHVAR3] = sprintf("%.2f", $array3[$CHVAR3]);
 $array3[$CHVAR3] = format_number ($array3[$CHVAR3]);
 $array2[$CHVAR2] = format_number ($array2[$CHVAR2]);
@@ -428,6 +451,7 @@ $CHVAR2 = '26';
 $CHVAR3 = '26';
 $array3[$CHVAR3] = $array[$CHVAR] * $array2[$CHVAR3];
 $totalsum = ($array3[$CHVAR2] + $totalsum);
+$totalsumCARDANO = ($array3[$CHVAR2] + $totalsumCARDANO);
 $array3[$CHVAR3] = sprintf("%.2f", $array3[$CHVAR3]);
 $array3[$CHVAR3] = format_number ($array3[$CHVAR3]);
 $array2[$CHVAR2] = format_number ($array2[$CHVAR2]);
@@ -441,6 +465,7 @@ $CHVAR2 = '27';
 $CHVAR3 = '27';
 $array3[$CHVAR3] = $array[$CHVAR] * $array2[$CHVAR3];
 $totalsum = ($array3[$CHVAR2] + $totalsum);
+$totalsumCARDANO = ($array3[$CHVAR2] + $totalsumCARDANO);
 $array3[$CHVAR3] = sprintf("%.2f", $array3[$CHVAR3]);
 $array3[$CHVAR3] = format_number ($array3[$CHVAR3]);
 $array2[$CHVAR2] = format_number ($array2[$CHVAR2]);
@@ -454,6 +479,7 @@ $CHVAR2 = '28';
 $CHVAR3 = '28';
 $array3[$CHVAR3] = $array[$CHVAR] * $array2[$CHVAR3];
 $totalsum = ($array3[$CHVAR2] + $totalsum);
+$totalsumCARDANO = ($array3[$CHVAR2] + $totalsumCARDANO);
 $array3[$CHVAR3] = sprintf("%.2f", $array3[$CHVAR3]);
 $array3[$CHVAR3] = format_number ($array3[$CHVAR3]);
 $array2[$CHVAR2] = format_number ($array2[$CHVAR2]);
@@ -472,6 +498,11 @@ $explainhow = "You didn't specify an ergoport!<br><br>Links in RED below:<br>1. 
 #putting the total sum of USD for a user into 2 decimals as well as comma
 $totalsum = sprintf("%.2f", $totalsum);
 $totalsum = format_number ($totalsum);
+$totalsumERGO = sprintf("%.2f", $totalsumERGO);
+$totalsumERGO = format_number ($totalsumERGO);
+$totalsumCARDANO = sprintf("%.2f", $totalsumCARDANO);
+$totalsumCARDANO = format_number ($totalsumCARDANO);
+
 
 #the html that will be displayed in the page
 my $html = qq{Content-Type: text/html
@@ -481,10 +512,11 @@ my $html = qq{Content-Type: text/html
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Ubuntu Terminal</title>
+    <title>Ergoport</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="https://my.ergoport.dev/ergoport.css"/>
+<link rel="icon" href="https://my.ergoport.dev/ergoport.ico">
   </head>
   <body>
     <main id="container">
@@ -504,7 +536,7 @@ my $html = qq{Content-Type: text/html
             <span id="terminal__prompt--user">$array2[1]@ubuntu:</span>
             <span id="terminal__prompt--location">~ <p> </span>
 
-            <span id="terminal__prompt--bling"><br>ERGO Data from Ergodex refreshed every minute,<br> last on:<font color=\"#696969\"> $array[7] UTC </font color=\"#696969\">(CURRENT API ISSUE, 1 hour DELAYS)</span>
+            <span id="terminal__prompt--bling"><br>ERGO Data from Ergodex refreshed every minute,<br> last on:<font color=\"#696969\"> $array[7] UTC </font color=\"#696969\">(CURRENT API ISSUE at ErgoDEX, 1-3 hour DELAYS,<br>could be my fault, will know soon)</span>
             <span id="terminal__prompt--bling"><br>Cardano Data from Minswap refreshed every minute,<br> last on:<font color=\"#696969\"> $array[16] UTC<br></span>
 
             <span id="terminal__prompt--bling"><br>In Order: Current USD Price, Total Tokens, Total USD in your Tokens<br><br><br></span>
@@ -527,8 +559,8 @@ $comet
 $erdoge
 $lunadog
 $migoreng
-
-<span id="terminal__prompt--bling"><br>**CARDANO Tokens (coming in a few days)**<br></span>
+            <span id="terminal__prompt--bling"><br>Total USD ERGO: <font color=\"#ff007b\"> \$$totalsumERGO <br><br></span>
+<span id="terminal__prompt--bling"><br>**CARDANO Tokens**<br></span>
 
 $cdog
 $cnt
@@ -544,16 +576,16 @@ $ctosi
 $ada
 
 
-
-            <span id="terminal__prompt--bling"><br>Total USD: <font color=\"#ff007b\"> \$$totalsum <br><br></span>
+            <span id="terminal__prompt--bling"><br>Total USD CARDANO: <font color=\"#ff007b\"> \$$totalsumCARDANO <br><br></span>
+            <span id="terminal__prompt--bling"><br><br>Total USD ALL: <font color=\"#ff007b\"> \$$totalsum <br><br></span>
 
 <span id="terminal__prompt--bling"><br><font color=\"#ffffff\"><br> *share your ergoport by simply copying the link in your browser address bar!<br><br></span>
 
 
             <span id="terminal__prompt--bling"> <font color=\"#ff3300\"> <a href="https://my.ergoport.dev/cgi-bin/ergoportedit.pl"><font color=\"#ff3300\">edit your data</a>  
- | <a href="https://my.ergoport.dev/cgi-bin/ergoportabout.pl?a=$id"><font color=\"#ff3300\">about
- | <a href="https://my.ergoport.dev/cgi-bin/ergoportnewuser.pl"><font color=\"#ff3300\">create an ergoport
- | <a href="https://my.ergoport.dev/cgi-bin/ergoporttip.pl?a=$id"><font color=\"#ff3300\">tip me!
+ | <a href="https://my.ergoport.dev/cgi-bin/ergoportabout.pl?a=$id"><font color=\"#ff3300\">about</a>
+ | <a href="https://my.ergoport.dev/cgi-bin/ergoportnewuser.pl"><font color=\"#ff3300\">create an ergoport</a>
+ | <a href="https://my.ergoport.dev/cgi-bin/ergoporttip.pl?a=$id"><font color=\"#ff3300\">tip me!/help/suggestions</a>
 </span>
 
             <span id="terminal__prompt--cursor"></span>

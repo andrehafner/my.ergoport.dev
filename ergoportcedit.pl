@@ -43,6 +43,33 @@ $cneta = $query->param("cneta");
 $ctosi = $query->param("ctosi");
 $ada = $query->param("ada");
 
+$ergPLUS = $query->param("ergPLUS");
+$sigusdPLUS = $query->param("sigusdPLUS");
+$sigrsvPLUS = $query->param("sigrsvPLUS");
+$netaPLUS = $query->param("netaPLUS");
+$etosiPLUS = $query->param("etosiPLUS");
+$ergopadPLUS = $query->param("ergopadPLUS");
+$exilePLUS = $query->param("exilePLUS");
+$paideiaPLUS = $query->param("paideiaPLUS");
+$terahertzPLUS = $query->param("terahertzPLUS");
+$egioPLUS = $query->param("egioPLUS");
+$cometPLUS = $query->param("cometPLUS");
+$erdogePLUS = $query->param("erdogePLUS");
+$lunadogPLUS = $query->param("lunadogPLUS");
+$migorengPLUS = $query->param("migorengPLUS");
+$cdogPLUS = $query->param("cdogPLUS");
+$cntPLUS = $query->param("cntPLUS");
+$hoskyPLUS = $query->param("hoskyPLUS");
+$milkPLUS = $query->param("milkPLUS");
+$minPLUS = $query->param("minPLUS");
+$meldPLUS = $query->param("meldPLUS");
+$lqPLUS = $query->param("lqPLUS");
+$danaPLUS = $query->param("danaPLUS");
+$paviaPLUS = $query->param("paviaPLUS");
+$cnetaPLUS = $query->param("cnetaPLUS");
+$ctosiPLUS = $query->param("ctosiPLUS");
+$adaPLUS = $query->param("adaPLUS");
+
 #this is for testing so I can see outputs in the browser
 #$|=1;            # Flush immediately.
 #print "Content-Type: text/plain\n\n";
@@ -65,6 +92,87 @@ my $dbh   = DBI->connect ("DBI:mysql:database=$db:host=$host",
   $user,
   $password)
   or die "Can't connect to database: $DBI::errstr\n";
+
+
+#lets add/subtract unless there is no value in the second box (this allows it to be empty instead of 0)
+if ($ergPLUS ne ''){
+$erg = ($erg + $ergPLUS);
+}
+if ($sigusdPLUS ne ''){
+$sigusd = ($sigusd + $sigusdPLUS);
+}
+if ($sigrsvPLUS ne ''){
+$sigrsv = ($sigrsv + $sigrsvPLUS);
+}
+if ($netaPLUS ne ''){
+$neta = ($neta + $netaPLUS);
+}
+if ($etosiPLUS ne ''){
+$etosi = ($etosi + $etosiPLUS);
+}
+if ($ergopadPLUS ne ''){
+$ergopad = ($ergopad + $ergopadPLUS);
+}
+if ($exilePLUS ne ''){
+$exile = ($exile + $exilePLUS);
+}
+if ($paideiaPLUS ne ''){
+$paideia = ($paideia + $paideiaPLUS);
+}
+if ($terahertzPLUS ne ''){
+$terahertz = ($terahertz + $terahertzPLUS);
+}
+if ($egioPLUS ne ''){
+$egio = ($egio + $egioPLUS);
+}
+if ($cometPLUS ne ''){
+$comet = ($comet + $cometPLUS);
+}
+if ($erdogePLUS ne ''){
+$erdoge = ($erdoge + $erdogePLUS);
+}
+if ($lunadogPLUS ne ''){
+$lunadog = ($lunadog + $lunadogPLUS);
+}
+if ($migorengPLUS ne ''){
+$migoreng = ($migoreng + $migorengPLUS);
+}
+if ($cdogPLUS ne ''){
+$cdog = ($cdog + $cdogPLUS);
+}
+if ($cntPLUS ne ''){
+$cnt = ($cnt + $cntPLUS);
+}
+if ($hoskyPLUS ne ''){
+$hosky = ($hosky + $hoskyPLUS);
+}
+if ($milkPLUS ne ''){
+$milk = ($milk + $milkPLUS);
+}
+if ($minPLUS ne ''){
+$min = ($min + $minPLUS);
+}
+if ($meldPLUS ne ''){
+$meld = ($meld + $meldPLUS);
+}
+if ($lqPLUS ne ''){
+$lq = ($lq + $lqPLUS);
+}
+if ($danaPLUS ne ''){
+$dana = ($dana + $danaPLUS);
+}
+if ($paviaPLUS ne ''){
+$pavia = ($pavia + $paviaPLUS);
+}
+if ($cnetaPLUS ne ''){
+$cneta = ($cneta + $cnetaPLUS);
+}
+if ($ctosiPLUS ne ''){
+$ctosi = ($ctosi + $ctosiPLUS);
+}
+if ($adaPLUS ne ''){
+$ada = ($ada + $adaPLUS);
+}
 
 #prep mysql statment to write values to the database
 my $sql = "update userdata set erg='$erg',
@@ -112,10 +220,11 @@ my $html = qq{Content-Type: text/html
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Ubuntu Terminal</title>
+    <title>Ergoport</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="https://my.ergoport.dev/ergoport.css"/>
+<link rel="icon" href="https://my.ergoport.dev/ergoport.ico">
   </head>
   <body>
 

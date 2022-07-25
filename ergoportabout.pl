@@ -17,10 +17,11 @@ my $html = qq{Content-Type: text/html
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Ubuntu Terminal</title>
+    <title>Ergoport</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="https://my.ergoport.dev/ergoport.css"/>
+<link rel="icon" href="https://my.ergoport.dev/ergoport.ico">
   </head>
   <body>
     <main id="container">
@@ -40,7 +41,7 @@ my $html = qq{Content-Type: text/html
             <span id="terminal__prompt--user">huh?@ubuntu:</span>
             <span id="terminal__prompt--location">~ <p> </span>
 
-<span id="terminal__prompt--bling"><a href="https://my.ergoport.dev/cgi-bin/ergoportnewuser.pl"><font color=\"#ff3300\">--> create an ergoport account, click on me! <-- </font color=\"#ff3300\"><br><br></span>
+<span id="terminal__prompt--bling">************************************************<br><br><a href="https://my.ergoport.dev/cgi-bin/ergoportnewuser.pl"><font color=\"#ff3300\">--> create an ergoport account, click on me! <-- </font color=\"#ff3300\"></a><br><font color=\"#ffffff\"><br>************************************************</font color=\"#ffffff\"><br><br></span>
 
 
             <span id="terminal__prompt--bling"><font color=\"#08C7FF\">Why?</font color=\"#08C7FF\"><br>
@@ -56,18 +57,17 @@ Your data is stored in a MySQL table<br>
 All ergoport dashboards are public and viewable by URL and the number at the end of it!<br><br>
 
 <font color=\"#08C7FF\">What's next?</font color=\"#08C7FF\"><br>
-1. Fix bugs and css so this page can get bigger<br>
-2. Phone foramtting<br>
-3. Integrate Cardano coin/token info<br>
-4. Password Resets<br>
+1. Phone foramtting<br>
+2. Integreate more tokens/chains that people prefer<br>
+3. Password Resets<br>
 <br>
-I'm a css/html hack so I used (thanks!) <a href="https://github.com/fobabs/ubuntu-terminal" target="_blank"><font color=\"#ff3300\">FOBABS
+I'm a css/html hack so I used (thanks!) <a href="https://github.com/fobabs/ubuntu-terminal" target="_blank"><font color=\"#ff3300\">FOBABS</a>
 <br><br></span>
 
 
             <span id="terminal__prompt--bling"> <font color=\"#ff3300\"> <a href="https://my.ergoport.dev/cgi-bin/ergoportedit.pl"><font color=\"#ff3300\">edit your data</a>  
- | <a href="https://my.ergoport.dev/cgi-bin/ergoport.pl?a=$id"><font color=\"#ff3300\">view your ergoport
- | <a href="https://my.ergoport.dev/cgi-bin/ergoporttip.pl?a=$id"><font color=\"#ff3300\">tip me!
+ | <a href="https://my.ergoport.dev/cgi-bin/ergoport.pl?a=$id"><font color=\"#ff3300\">view your ergoport</a>
+ | <a href="https://my.ergoport.dev/cgi-bin/ergoporttip.pl?a=$id"><font color=\"#ff3300\">tip me!/help/suggestions</a>
 
 </span>
 

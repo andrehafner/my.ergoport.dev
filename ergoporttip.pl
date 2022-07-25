@@ -14,9 +14,10 @@ my $html = qq{Content-Type: text/html
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Ubuntu Terminal</title>
+    <title>Ergoport</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://my.ergoport.dev/ergoport.ico">
     <link rel="stylesheet" type="text/css" href="https://my.ergoport.dev/ergoport.css"/>
   </head>
   <body>
@@ -41,12 +42,16 @@ my $html = qq{Content-Type: text/html
             <span id="terminal__prompt--bling">ergo wallet:<br>9eZPTmn8zp5GJ7KZwTo8cEuxNdezWaY3hBbLeWid7EAZedzb9tD<br></span>
             <span id="terminal__prompt--bling"><br>cardano wallet:<br>addr1qxwxpafgqasnddk8et6en0vn74awg4j0n2nfek6e62aywvgcwedk5s2s92dx7msutk33zsl92uh8uhahh305nz7pekjsz5l37w<br><br><br></span>
 
+            <span id="terminal__prompt--bling">***PLEASE*** let me know if something isn't working!<br>
+These scripts output VERY simple HTML, so it should work on any browser.<br>
+They also rely on the API text feeds from ERGODEX and Minswap, which can go offline from time to time.<br><br>
+For comments and suggestions, feel free to write me on <a href="https://t.me/ergoport">Telegram</a> or on discord drehaf\#0090<br><br><br></span>
 
 
             <span id="terminal__prompt--bling"> <font color=\"#ff3300\"> <a href="https://my.ergoport.dev/cgi-bin/ergoportedit.pl"><font color=\"#ff3300\">edit your data</a>  
- | <a href="https://my.ergoport.dev/cgi-bin/ergoportabout.pl?a=$id"><font color=\"#ff3300\">about
- | <a href="https://my.ergoport.dev/cgi-bin/ergoportnewuser.pl"><font color=\"#ff3300\">create an ergoport
- | <a href="https://my.ergoport.dev/cgi-bin/ergoport.pl?a=$id"><font color=\"#ff3300\">view your ergoport
+ | <a href="https://my.ergoport.dev/cgi-bin/ergoportabout.pl?a=$id"><font color=\"#ff3300\">about</a>
+ | <a href="https://my.ergoport.dev/cgi-bin/ergoportnewuser.pl"><font color=\"#ff3300\">create an ergoport</a>
+ | <a href="https://my.ergoport.dev/cgi-bin/ergoport.pl?a=$id"><font color=\"#ff3300\">view your ergoport</a>
 </span>
 
             <span id="terminal__prompt--cursor"></span>

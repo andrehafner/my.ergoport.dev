@@ -82,10 +82,11 @@ my $html = qq{Content-Type: text/html
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Ubuntu Terminal</title>
+    <title>Ergoport</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="https://my.ergoport.dev/ergoport.css"/>
+<link rel="icon" href="https://my.ergoport.dev/ergoport.ico">
   </head>
   <body>
     <main id="container">
@@ -105,86 +106,152 @@ my $html = qq{Content-Type: text/html
             <span id="terminal__prompt--user">Edit Port@ubuntu:</span>
             <span id="terminal__prompt--location">~ <p><br></span>
 
-<span id="terminal__prompt--location">Fill in each field with the amount of tokens you are holding!<br>If you want to track a coin you don't have, just enter 0.<br>Leave the ones blank that you don't want to see in your ergport dashboard!
- <p><br></span>
+<span id="terminal__prompt--location">Fill in each field with the amount of tokens you are holding.<br>If you want to track a coin you don't have, just enter 0.<br>Leave the ones blank that you don't want to see in your ergport dashboard.<br>Please suggest more if there are some you want to add to tracking!
+ <p></span>
 
+            <span id="terminal__prompt--bling"><br><font color=\"#ff0000\">Input Numbers Only!&nbsp&nbsp&nbsp&nbspMake the right number negative to subtract with a -, ex: -140<br>
+Edit any field, they will simply be added together on commit.
+ </font color=\"#ff0000\"></span>
+
+
+            <span id="terminal__prompt--location"><br><br>**ERGO TOKENS**<br><br></span>
             <input type="text" name="erg" maxlength="49" value="$array[3]">
-            <label for="erg"><b>ERG</b><b><b><br></label>
+            <label for="erg"><b>+/-</label>
+            <input type="text" name="ergPLUS" maxlength="49">
+            <label for="ergPLUS"><b>ERG</b><b><b><br></label>
 
             <input type="text" name="sigusd" maxlength="49" value="$array[4]">        
-            <label for="sigusd"><b>SigUSD</b><b><b><br></label>
+            <label for="sigusd"><b>+/-</label>
+            <input type="text" name="sigusdPLUS" maxlength="49">
+            <label for="sigusdPLUS"><b>SigUSD</b><b><b><br></label>
 
-            <input type="text" name="sigrsv" maxlength="49" value="$array[5]">        
-            <label for="sigrsv"><b>SigRSV</b><b><b><br></label>
+
+
+            <input type="text" name="sigrsv" maxlength="49" value="$array[5]">
+            <label for="sigrsv"><b>+/-</label>
+            <input type="text" name="sigrsvPLUS" maxlength="49">
+            <label for="sigrsvPLUS"><b>SigRSV</b><b><b><br></label>
+
+
 
             <input type="text" name="neta" maxlength="49" value="$array[6]">        
-            <label for="neta"><b>NETA</b><b><b><br></label>
+            <label for="neta"><b>+/-</label>
+            <input type="text" name="netaPLUS" maxlength="49">
+            <label for="netaPLUS"><b>NETA</b><b><b><br></label>
 
             <input type="text" name="etosi" maxlength="49" value="$array[7]">        
-            <label for="etosi"><b>eTosi</b><b><b><br></label>
+            <label for="etosi"><b>+/-</label>
+            <input type="text" name="etosiPLUS" maxlength="49">
+            <label for="etosiPLUS"><b>eTosi</b><b><b><br></label>
 
             <input type="text" name="ergopad" maxlength="49" value="$array[8]">        
-            <label for="ergopad"><b>ERGOPAD</b><b><b><br></label>
+            <label for="ergopad"><b>+/-</label>
+            <input type="text" name="ergopadPLUS" maxlength="49">
+            <label for="ergopadPLUS"><b>ERGOPAD</b><b><b><br></label>
 
             <input type="text" name="exile" maxlength="49" value="$array[9]">        
-            <label for="exile"><b>EXILE</b><b><b><br></label>
+            <label for="exile"><b>+/-</label>
+            <input type="text" name="exilePLUS" maxlength="49">
+            <label for="exilePLUS"><b>EXILE</b><b><b><br></label>
 
             <input type="text" name="paideia" maxlength="49" value="$array[10]">        
-            <label for="paideia"><b>PAIDEIA</b><b><b><br></label>
+            <label for="paideia"><b>+/-</label>
+            <input type="text" name="paideiaPLUS" maxlength="49">
+            <label for="paideiaPLUS"><b>PAIDEIA</b><b><b><br></label>
 
             <input type="text" name="terahertz" maxlength="49" value="$array[11]">        
-            <label for="terahertz"><b>TERAHERTZ</b><b><b><br></label>
+            <label for="terahertz"><b>+/-</label>
+            <input type="text" name="terahertzPLUS" maxlength="49">
+            <label for="terahertzPLUS"><b>TERAHERTZ</b><b><b><br></label>
 
             <input type="text" name="egio" maxlength="49" value="$array[12]">        
-            <label for="egio"><b>EGIO</b><b><b><br></label>
+            <label for="egio"><b>+/-</label>
+            <input type="text" name="egioPLUS" maxlength="49">
+            <label for="egioPLUS"><b>EGIO</b><b><b><br></label>
 
             <input type="text" name="comet" maxlength="49" value="$array[13]">        
-            <label for="comet"><b>COMET</b><b><b><br></label>
+            <label for="comet"><b>+/-</label>
+            <input type="text" name="cometPLUS" maxlength="49">
+            <label for="cometPLUS"><b>COMET</b><b><b><br></label>
 
             <input type="text" name="erdoge" maxlength="49" value="$array[14]">        
-            <label for="erdoge"><b>ERDOGE</b><b><b><br></label>
+            <label for="erdoge"><b>+/-</label>
+            <input type="text" name="erdogePLUS" maxlength="49">
+            <label for="erdogePLUS"><b>ERDOGE</b><b><b><br></label>
 
             <input type="text" name="lunadog" maxlength="49" value="$array[15]">        
-            <label for="lunadog"><b>LunaDog</b><b><b><br></label>
+            <label for="lunadog"><b>+/-</label>
+            <input type="text" name="lunadogPLUS" maxlength="49">
+            <label for="lunadogPLUS"><b>LUNADOG</b><b><b><br></label>
 
             <input type="text" name="migoreng" maxlength="49" value="$array[16]">        
-            <label for="migoreng"><b>Mi Goreng</b><b><b><br></label>
+            <label for="migoreng"><b>+/-</label>
+            <input type="text" name="migorengPLUS" maxlength="49">
+            <label for="migorengPLUS"><b>Mi Goreng</b><b><b><br></label>
+
+            <span id="terminal__prompt--bling"><br><br><br><font color=\"#ff0000\">Input Numbers Only!</font color=\"#ff0000\"></span>
+
+            <span id="terminal__prompt--location"><br>**Cardano Tokens**<br><br></span>
 
             <input type="text" name="cdog" maxlength="49" value="$array[17]">
-            <label for="cdog"><b>CDOG</b><b><b><br></label>
+            <label for="cdog"><b>+/-</label>
+            <input type="text" name="cdogPLUS" maxlength="49">
+            <label for="cdogPLUS"><b>CDOG</b><b><b><br></label>
 
             <input type="text" name="cnt" maxlength="49" value="$array[18]">
-            <label for="cnt"><b>CNT</b><b><b><br></label>
+            <label for="cnt"><b>+/-</label>
+            <input type="text" name="cntPLUS" maxlength="49">
+            <label for="cntPLUS"><b>CNT</b><b><b><br></label>
 
             <input type="text" name="hosky" maxlength="49" value="$array[19]">
-            <label for="hosky"><b>HOSKY</b><b><b><br></label>
+            <label for="hosky"><b>+/-</label>
+            <input type="text" name="hoskyPLUS" maxlength="49">
+            <label for="hoskyPLUS"><b>HOSKY</b><b><b><br></label>
 
             <input type="text" name="milk" maxlength="49" value="$array[20]">
-            <label for="milk"><b>Milk</b><b><b><br></label>
+            <label for="milk"><b>+/-</label>
+            <input type="text" name="milkPLUS" maxlength="49">
+            <label for="milkPLUS"><b>MILK</b><b><b><br></label>
 
             <input type="text" name="min" maxlength="49" value="$array[21]">
-            <label for="min"><b>Min</b><b><b><br></label>
+            <label for="min"><b>+/-</label>
+            <input type="text" name="minPLUS" maxlength="49">
+            <label for="minPLUS"><b>MIN</b><b><b><br></label>
 
             <input type="text" name="meld" maxlength="49" value="$array[22]">
-            <label for="meld"><b>MELD</b><b><b><br></label>
+            <label for="meld"><b>+/-</label>
+            <input type="text" name="meldPLUS" maxlength="49">
+            <label for="meldPLUS"><b>MELD</b><b><b><br></label>
 
             <input type="text" name="lq" maxlength="49" value="$array[23]">
-            <label for="lq"><b>LQ</b><b><b><br></label>
+            <label for="lq"><b>+/-</label>
+            <input type="text" name="lqPLUS" maxlength="49">
+            <label for="lqPLUS"><b>LQ</b><b><b><br></label>
 
             <input type="text" name="dana" maxlength="49" value="$array[24]">
-            <label for="dana"><b>DANA</b><b><b><br></label>
+            <label for="dana"><b>+/-</label>
+            <input type="text" name="danaPLUS" maxlength="49">
+            <label for="danaPLUS"><b>DANA</b><b><b><br></label>
 
             <input type="text" name="pavia" maxlength="49" value="$array[25]">
-            <label for="pavia"><b>PAVIA</b><b><b><br></label>
+            <label for="pavia"><b>+/-</label>
+            <input type="text" name="paviaPLUS" maxlength="49">
+            <label for="paviaPLUS"><b>PAVIA</b><b><b><br></label>
 
             <input type="text" name="cneta" maxlength="49" value="$array[26]">
-            <label for="cneta"><b>cNETA</b><b><b><br></label>
+            <label for="cneta"><b>+/-</label>
+            <input type="text" name="cnetaPLUS" maxlength="49">
+            <label for="cnetaPLUS"><b>cNETA</b><b><b><br></label>
 
             <input type="text" name="ctosi" maxlength="49" value="$array[27]">
-            <label for="ctosi"><b>cTOSI</b><b><b><br></label>
+            <label for="ctosi"><b>+/-</label>
+            <input type="text" name="ctosiPLUS" maxlength="49">
+            <label for="ctosiPLUS"><b>cTOSI</b><b><b><br></label>
 
             <input type="text" name="ada" maxlength="49" value="$array[28]">
-            <label for="ada"><b>ADA</b><b><b><br></label>
+            <label for="ada"><b>+/-</label>
+            <input type="text" name="adaPLUS" maxlength="49">
+            <label for="adaPLUS"><b>ADA</b><b><b><br></label>
 
 <input type="hidden" name="name" maxlength="49" value="$name">
 <input type="hidden" name="pass" maxlength="49" value="$pass">
