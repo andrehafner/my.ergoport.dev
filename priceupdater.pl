@@ -9,8 +9,8 @@ use Number::Format 'format_number';
 use Time::HiRes qw(gettimeofday);
 #use LWP::Protocol::https;
 
-$|=1;            # Flush immediately.
-print "Content-Type: text/plain\n\n";
+#$|=1;            # Flush immediately.
+#print "Content-Type: text/plain\n\n";
 
 
 #time calculation
@@ -18,7 +18,8 @@ print "Content-Type: text/plain\n\n";
 @weekDays = qw(Sun Mon Tue Wed Thu Fri Sat Sun);
 ($second, $minute, $hour, $dayOfMonth, $month, $yearOffset, $dayOfWeek, $dayOfYear, $daylightSavings) = localtime();
 $year = 1900 + $yearOffset;
-$theTime = "$months[$month] $dayOfMonth, $year - $weekDays[$dayOfWeek] $hour:$minute";
+$the_time = "$months[$month] $dayOfMonth, $year - $weekDays[$dayOfWeek] $hour:$minute";
+
 
 my $jar = HTTP::CookieJar::LWP->new;
 my $ua  = LWP::UserAgent->new(
@@ -26,6 +27,7 @@ my $ua  = LWP::UserAgent->new(
     protocols_allowed => ['http', 'https'],
     timeout           => 100,
 );
+
  
 $ua->agent('Mozilla/9.0');  
 $ua->env_proxy;
@@ -37,100 +39,312 @@ $timecodeSLOWMOVERS = $timecode - 3000000000;
 #print $timecode;
 #exit;
 
-my $response = $ua->get("https://api.ergodex.io/v1/amm/pool/9916d75132593c8b07fe18bd8d583bda1652eed7565cf41a4738ddd90fc992ec/chart?from=$timecode");
-my $response1 = $ua->get("https://api.ergodex.io/v1/amm/pool/d7868533f26db1b1728c1f85c2326a3c0327b57ddab14e41a2b77a5d4c20f4b2/chart?from=$timecode");
-my $response2 = $ua->get("https://api.ergodex.io/v1/amm/pool/7d2e28431063cbb1e9e14468facc47b984d962532c19b0b14f74d0ce9ed459be/chart?from=$timecode");
-my $response3 = $ua->get("https://api.ergodex.io/v1/amm/pool/b6b38cae74e4754ae70a7c4335a9150449e47cb7421394016ab73c5c22a1a9dc/chart?from=$timecode");
-my $response4 = $ua->get("https://api.ergodex.io/v1/amm/pool/1d5afc59838920bb5ef2a8f9d63825a55b1d48e269d7cecee335d637c3ff5f3f/chart?from=$timecode");
-my $response5 = $ua->get("https://api.ergodex.io/v1/amm/pool/a62a1603bae6c0d293f7b954672de6fa8eae9793d433cb02ee49dce736da54ac/chart?from=$timecodeSLOWMOVERS");
-my $response6 = $ua->get("https://api.ergodex.io/v1/amm/pool/666be5df835a48b99c40a395a8aa3ea6ce39ede2cd77c02921d629b9baad8200/chart?from=$timecodeSLOWMOVERS");
-my $response7 = $ua->get("https://api.ergodex.io/v1/amm/pool/0b36eb5086ba1d258341723fa4768acaa3804fba982641a00941d5aad2107f50/chart?from=$timecodeSLOWMOVERS");
-my $response8 = $ua->get("https://api.ergodex.io/v1/amm/pool/9c1d78e53e7812df96bbb09b757ee1e059c5a298d85789b5c82a7222c34e8f61/chart?from=$timecodeSLOWMOVERS");
-my $response9 = $ua->get("https://api.ergodex.io/v1/amm/pool/1f01dc8e29806d96ca0b79f8e798cd8cfce51c0e676aaedf6ab3464b37da9dfd/chart?from=$timecodeSLOWMOVERS");
-my $response10 = $ua->get("https://api.ergodex.io/v1/amm/pool/3d4fdb931917647f4755ada29d13247686df84bd8aea060d22584081bd11ba69/chart?from=$timecodeSLOWMOVERS");
-my $response11 = $ua->get("https://api.ergodex.io/v1/amm/pool/c1b9c430249bd97326042fdb09c0fb6fe1455d498a20568cc64390bfeca8aff2/chart?from=$timecodeSLOWMOVERS");
-my $response12 = $ua->get("https://api.ergodex.io/v1/amm/pool/fff5e73c7c8c61335d8c4ab18a2d09029e1c9131ed195c4e0ceccf9dd0c03d7f/chart?from=$timecodeSLOWMOVERS");
-
+my $response = $ua->get("https://api.ergodex.io/v1/amm/markets?from=1653075262280");
+#my $response = $ua->get("https://google.com");
 
 my $Nresponse =  $response->decoded_content;
-my $Nresponse1 = $response1->decoded_content;
-my $Nresponse2 = $response2->decoded_content;
-my $Nresponse3 = $response3->decoded_content;
-my $Nresponse4 = $response4->decoded_content;
-my $Nresponse5 = $response5->decoded_content;
-my $Nresponse6 = $response6->decoded_content;
-my $Nresponse7 = $response7->decoded_content;
-my $Nresponse8 = $response8->decoded_content;
-my $Nresponse9 = $response9->decoded_content;
-my $Nresponse10 = $response10->decoded_content;
-my $Nresponse11 = $response11->decoded_content;
-my $Nresponse12 = $response12->decoded_content;
+
+#my $string =~ /\bb34b3ea80060ace9427bda98690a73d33840e27aaa8d6edb7f0c757a634e455441........................\b/;
+
+#let's wipe the previously stored file so we have clean results to search from
+truncate '/usr/lib/cgi-bin/ergo_prices.txt', 0;
+
+# Open a file named "output.txt"; die if there's an error
+open my $fh, '>', "/usr/lib/cgi-bin/ergo_prices.txt" or die "Cannot open ergo_prices.txt: $!";
+
+# Loop over the array
+foreach ($Nresponse)
+{
+    print $fh "$_\n"; # Print each entry in our array to the file
+}
+close $fh; # Not necessary, but nice to do
 
 
-$Nresponse = substr($Nresponse,-20);
-$Nresponse1 = substr($Nresponse1,-20);
-$Nresponse2 = substr($Nresponse2,-20);
-$Nresponse3 = substr($Nresponse3,-20);
-$Nresponse4 = substr($Nresponse4,-20);
-$Nresponse5 = substr($Nresponse5,-20);
-$Nresponse6 = substr($Nresponse6,-20);
-$Nresponse7 = substr($Nresponse7,-20);
-$Nresponse8 = substr($Nresponse8,-20);
-$Nresponse9 = substr($Nresponse9,-20);
-$Nresponse10 = substr($Nresponse10,-20);
-$Nresponse11 = substr($Nresponse11,-20);
-$Nresponse12 = substr($Nresponse12,-20);
+#get the price of cadano from cointop app
+#my $adaPRICE = `cointop price --coin ADA`;
+#$adaPRICE =~ s/\$//;
 
 
-$Nresponse =~ s/.*:\s*//;
-$Nresponse1 =~ s/.*:\s*//;
-$Nresponse2 =~ s/.*:\s*//;
-$Nresponse3 =~ s/.*:\s*//;
-$Nresponse4 =~ s/.*:\s*//;
-$Nresponse5 =~ s/.*:\s*//;
-$Nresponse6 =~ s/.*:\s*//;
-$Nresponse7 =~ s/.*:\s*//;
-$Nresponse8 =~ s/.*:\s*//;
-$Nresponse9 =~ s/.*:\s*//;
-$Nresponse10 =~ s/.*:\s*//;
-$Nresponse11 =~ s/.*:\s*//;
-$Nresponse12 =~ s/.*:\s*//;
+#ERG
+sub main
+{
+    my $file = '/usr/lib/cgi-bin/ergo_prices.txt';
+    open(FH, $file) or die("File $file not found");
+      
+    while(my $String = <FH>)
+    {
+        if($String =~ /("ERG","quoteId":"03faf2cb329f2e90d6d23b58d91bbb6c046aa143261cc21f52fbe2824bfcbf04","quoteSymbol":"SigUSD","lastPrice":................)/)
+        {
+         $ERGresult = "$1";
+        }
+    }
+    close(FH);
 
 
-$Nresponse = substr($Nresponse,0,-2);
-$Nresponse1 = substr($Nresponse1,0,-2);
-$Nresponse2 = substr($Nresponse2,0,-2);
-$Nresponse3 = substr($Nresponse3,0,-2);
-$Nresponse4 = substr($Nresponse4,0,-2);
-$Nresponse5 = substr($Nresponse5,0,-2);
-$Nresponse6 = substr($Nresponse6,0,-2);
-$Nresponse7 = substr($Nresponse7,0,-2);
-$Nresponse8 = substr($Nresponse8,0,-2);
-$Nresponse9 = substr($Nresponse9,0,-2);
-$Nresponse10 = substr($Nresponse10,0,-2);
-$Nresponse11 = substr($Nresponse11,0,-2);
-$Nresponse12 = substr($Nresponse12,0,-2);
+
+#SIGRSV
+    my $file = '/usr/lib/cgi-bin/ergo_prices.txt';
+   open(FH, $file) or die("File $file not found");
+
+    while(my $String = <FH>)
+    {
+        if($String =~ /("ERG","quoteId":"003bd19d0187117f130b62e1bcab0939929ff5c7709f843c5c4dd158949285d0","quoteSymbol":"SigRSV","lastPrice":..................)/)
+        {
+           $SIGRSVresult = "$1";
+        }
+    }
+    close(FH);
+
+#NETA
+    my $file = '/usr/lib/cgi-bin/ergo_prices.txt';
+   open(FH, $file) or die("File $file not found");
+
+    while(my $String = <FH>)
+    {
+        if($String =~ /("ERG","quoteId":"472c3d4ecaa08fb7392ff041ee2e6af75f4a558810a74b28600549d5392810e8","quoteSymbol":"NETA","lastPrice":................)/)
+        {
+           $NETAresult = "$1";
+        }
+    }
+    close(FH);
 
 
-$Nresponse1 = ($Nresponse / $Nresponse1);
-$Nresponse2 = ($Nresponse / $Nresponse2);
-$Nresponse3 = ($Nresponse / $Nresponse3);
-$Nresponse4 = ($Nresponse / $Nresponse4);
-$Nresponse5 = ($Nresponse / $Nresponse5);
-$Nresponse6 = ($Nresponse / $Nresponse6);
-$Nresponse7 = ($Nresponse / $Nresponse7);
-$Nresponse8 = ($Nresponse / $Nresponse8);
-$Nresponse9 = ($Nresponse / $Nresponse9);
-$Nresponse10 = ($Nresponse / $Nresponse10);
-$Nresponse11 = ($Nresponse / $Nresponse11);
-$Nresponse12 = ($Nresponse / $Nresponse12);
+#ETOSI
+    my $file = '/usr/lib/cgi-bin/ergo_prices.txt';
+   open(FH, $file) or die("File $file not found");
+
+    while(my $String = <FH>)
+    {
+        if($String =~ /("ERG","quoteId":"94180232cc0d91447178a0a995e2c14c57fbf03b06d5d87d5f79226094f52ffc","quoteSymbol":"eTOSI","lastPrice":..................)/)
+        {
+           $ETOSIresult = "$1";
+        }
+    }
+    close(FH);
 
 
-#$Nresponse = sprintf("%.4f", $Nresponse);
-#$Nresponse1 = sprintf("%.4f", $Nresponse1);
-#$Nresponse2 = sprintf("%.4f", $Nresponse2);
-#$Nresponse3 = sprintf("%.4f", $Nresponse3);
-#$Nresponse4 = sprintf("%.4f", $Nresponse4);
+#ERGOPAD
+    my $file = '/usr/lib/cgi-bin/ergo_prices.txt';
+   open(FH, $file) or die("File $file not found");
+
+    while(my $String = <FH>)
+    {
+        if($String =~ /("ERG","quoteId":"d71693c49a84fbbecd4908c94813b46514b18b67a99952dc1e6e4791556de413","quoteSymbol":"ergopad","lastPrice":..................)/)
+        {
+           $ERGOPADresult = "$1";
+        }
+    }
+    close(FH);
+
+
+#EXILE
+    my $file = '/usr/lib/cgi-bin/ergo_prices.txt';
+   open(FH, $file) or die("File $file not found");
+
+    while(my $String = <FH>)
+    {
+        if($String =~ /("ERG","quoteId":"007fd64d1ee54d78dd269c8930a38286caa28d3f29d27cadcb796418ab15c283","quoteSymbol":"EXLE","lastPrice":..................)/)
+        {
+           $EXILEresult = "$1";
+        }
+    }
+    close(FH);
+
+
+#PAIDEIA
+    my $file = '/usr/lib/cgi-bin/ergo_prices.txt';
+   open(FH, $file) or die("File $file not found");
+
+    while(my $String = <FH>)
+    {
+        if($String =~ /("ERG","quoteId":"1fd6e032e8476c4aa54c18c1a308dce83940e8f4a28f576440513ed7326ad489","quoteSymbol":"Paideia","lastPrice":..................)/)
+        {
+           $PAIDEIAresult = "$1";
+        }
+    }
+    close(FH);
+
+
+#TERAHERTZ
+    my $file = '/usr/lib/cgi-bin/ergo_prices.txt';
+   open(FH, $file) or die("File $file not found");
+
+    while(my $String = <FH>)
+    {
+        if($String =~ /("ERG","quoteId":"02f31739e2e4937bb9afb552943753d1e3e9cdd1a5e5661949cb0cef93f907ea","quoteSymbol":"Terahertz","lastPrice":..................)/)
+        {
+           $TERAHERTZresult = "$1";
+        }
+    }
+    close(FH);
+
+
+#EGIO
+    my $file = '/usr/lib/cgi-bin/ergo_prices.txt';
+   open(FH, $file) or die("File $file not found");
+
+    while(my $String = <FH>)
+    {
+        if($String =~ /("ERG","quoteId":"00b1e236b60b95c2c6f8007a9d89bc460fc9e78f98b09faec9449007b40bccf3","quoteSymbol":"EGIO","lastPrice":..................)/)
+        {
+           $EGIOresult = "$1";
+        }
+    }
+    close(FH);
+
+
+#COMET
+    my $file = '/usr/lib/cgi-bin/ergo_prices.txt';
+   open(FH, $file) or die("File $file not found");
+
+    while(my $String = <FH>)
+    {
+        if($String =~ /("ERG","quoteId":"0cd8c9f416e5b1ca9f986a7f10a84191dfb85941619e49e53c0dc30ebf83324b","quoteSymbol":"COMET","lastPrice":..................)/)
+        {
+           $COMETresult = "$1";
+        }
+    }
+    close(FH);
+
+
+#ERDOGE
+    my $file = '/usr/lib/cgi-bin/ergo_prices.txt';
+   open(FH, $file) or die("File $file not found");
+
+    while(my $String = <FH>)
+    {
+        if($String =~ /("ERG","quoteId":"36aba4b4a97b65be491cf9f5ca57b5408b0da8d0194f30ec8330d1e8946161c1","quoteSymbol":"Erdoge","lastPrice":..................)/)
+        {
+           $ERDOGEresult = "$1";
+        }
+    }
+    close(FH);
+
+
+#LUNADOG
+    my $file = '/usr/lib/cgi-bin/ergo_prices.txt';
+   open(FH, $file) or die("File $file not found");
+
+    while(my $String = <FH>)
+    {
+        if($String =~ /("ERG","quoteId":"5a34d53ca483924b9a6aa0c771f11888881b516a8d1a9cdc535d063fe26d065e","quoteSymbol":"LunaDog","lastPrice":..................)/)
+        {
+           $LUNADOGresult = "$1";
+        }
+    }
+    close(FH);
+
+
+#MIGORENG
+    my $file = '/usr/lib/cgi-bin/ergo_prices.txt';
+   open(FH, $file) or die("File $file not found");
+
+    while(my $String = <FH>)
+    {
+        if($String =~ /("ERG","quoteId":"0779ec04f2fae64e87418a1ad917639d4668f78484f45df962b0dec14a2591d2","quoteSymbol":"Mi Goreng ","lastPrice":..................)/)
+        {
+           $MIGORENGresult = "$1";
+        }
+    }
+    close(FH);
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+main();
+
+#remove leading set chars and then delete everything after the comma
+$ERGresult =~ s/^.{118}//s;
+$ERGresult =~ s/\,.*//;
+
+$SIGRSVresult =~ s/^.{118}//s;
+$SIGRSVresult =~ s/\,.*//;
+
+$NETAresult =~ s/^.{116}//s;
+$NETAresult =~ s/\,.*//;
+
+$ETOSIresult =~ s/^.{117}//s;
+$ETOSIresult =~ s/\,.*//;
+
+$ERGOPADresult =~ s/^.{119}//s;
+$ERGOPADresult =~ s/\,.*//;
+
+$EXILEresult =~ s/^.{116}//s;
+$EXILEresult =~ s/\,.*//;
+
+$PAIDEIAresult =~ s/^.{121}//s;
+$PAIDEIAresult =~ s/\,.*//;
+
+$TERAHERTZresult =~ s/^.{121}//s;
+$TERAHERTZresult =~ s/\,.*//;
+
+$EGIOresult =~ s/^.{116}//s;
+$EGIOresult =~ s/\,.*//;
+
+$COMETresult =~ s/^.{117}//s;
+$COMETresult =~ s/\,.*//;
+
+$ERDOGEresult =~ s/^.{118}//s;
+$ERDOGEresult =~ s/\,.*//;
+
+$LUNADOGresult =~ s/^.{119}//s;
+$LUNADOGresult =~ s/\,.*//;
+
+$MIGORENGresult =~ s/^.{122}//s;
+$MIGORENGresult =~ s/\,.*//;
+
+
+$SIGRSVresult = $ERGresult / $SIGRSVresult;
+$NETAresult = $ERGresult / $NETAresult;
+$ETOSIresult = $ERGresult / $ETOSIresult;
+$ERGOPADresult = $ERGresult / $ERGOPADresult;
+$EXILEresult = $ERGresult / $EXILEresult;
+$PAIDEIAresult = $ERGresult / $PAIDEIAresult;
+$TERAHERTZresult = $ERGresult / $TERAHERTZresult;
+$EGIOresult = $ERGresult / $EGIOresult;
+$COMETresult = $ERGresult / $COMETresult;
+$ERDOGEresult = $ERGresult / $ERDOGEresult;
+$LUNADOGresult = $ERGresult / $LUNADOGresult;
+$MIGORENGresult = $ERGresult / $MIGORENGresult;
+
+
+print $ERGresult;
+print "\n";
+print $SIGRSVresult;
+print "\n";
+print $NETAresult;
+print "\n";
+print $ETOSIresult;
+print "\n";
+print $ERGOPADresult;
+print "\n";
+print $EXILEresult;
+print "\n";
+print $PAIDEIAresult;
+print "\n";
+print $TERAHERTZresult;
+print "\n";
+print $EGIOresult;
+print "\n";
+print $COMETresult;
+print "\n";
+print $ERDOGEresult;
+print "\n";
+print $LUNADOGresult;
+print "\n";
+print $MIGORENGresult;
+print "\n";
+
 
 #this gets the mysql password from a file so we don't have to store it in the script
 open my $fh, '<', '/usr/lib/cgi-bin/sql.txt' or die "Can't open file $!";
@@ -153,7 +367,7 @@ my $dbh   = DBI->connect ("DBI:mysql:database=$db:host=$host",
   or die "Can't connect to database: $DBI::errstr\n";
 
 #wite the form data back to the database
-my $sql = "UPDATE pricedata SET erg='$Nresponse',ergopad='$Nresponse1', neta='$Nresponse2', etosi='$Nresponse3', sigrsv='$Nresponse4', sigusd='1', datarefreshdate='$theTime', exile='$Nresponse5', paideia='$Nresponse6', terahertz='$Nresponse7', egio='$Nresponse8', comet='$Nresponse9', erdoge='$Nresponse10', lunadog='$Nresponse11', migoreng='$Nresponse12' WHERE id='1';";
+my $sql = "UPDATE pricedata SET erg='$ERGresult',ergopad='$ERGOPADresult', neta='$NETAresult', etosi='$ETOSIresult', sigrsv='$SIGRSVresult', sigusd='1', datarefreshdate='$the_time', exile='$EXILEresult', paideia='$PAIDEIAresult', terahertz='$TERAHERTZresult', egio='$EGIOresult', comet='$COMETresult', erdoge='$ERDOGEresult', lunadog='$LUNADOGresult', migoreng='$MIGORENGresult' WHERE id='1';";
 
 #prepare the query
 my $sth = $dbh->prepare($sql);

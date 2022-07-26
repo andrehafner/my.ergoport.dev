@@ -51,7 +51,7 @@ without adding them up in a wallet or needing an extension<br><br>
 <font color=\"#08C7FF\"> What is this running on and how does it work?<br></font color=\"#ff3300\">
 Linux VPM 4 core 8GB 160SSD (lets see if it keeps up)<br>
 This app takes a read from ergodex every minute and caches it for your dashboard<br>
-Passwords hashed w/MD5<br>
+Passwords hashed w/MD5 - use a nice long passphrase!<br>
 Your data is stored in a MySQL table<br>
 <br>
 All ergoport dashboards are public and viewable by URL and the number at the end of it!<br><br>
