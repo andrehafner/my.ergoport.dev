@@ -13,6 +13,7 @@ It is essentially a bunch of linked perl scripts which output to a HTML
 example portfolio: https://my.ergoport.dev/cgi-bin/ergoport.pl?a=11
 
 It can run on anything that runs Perl and PerlCGI.
+
 I've tested on Windows (activeperl) and it is currently running on Linux VPS
 
 To Do:
@@ -28,17 +29,23 @@ Example: https://my.ergoport.dev/cgi-bin/epAnetaBTC.pl
 will return:
 ### CNETA/NETA Price Checker ###
 
-cNETA: $0.015364 in USD\n
-cNETA: 0.0286199143488895 in ADA\n
+cNETA: $0.015364 in USD
+
+cNETA: 0.0286199143488895 in ADA
+
   ADA: $0.536829 in USD\n
 
- NETA: $0.005271 in USD\n
- NETA: 0.00246984155247183 in ERG\n
+ NETA: $0.005271 in USD
+
+ NETA: 0.00246984155247183 in ERG
+
   ERG: $2.134145 in USD\n
 
-price updated on Jul 31, 2022 - Sun 18:11 UTC\n
-check out https://my.ergoport.dev\n
-example portfolio: https://my.ergoport.dev/cgi-bin/ergoport.pl?a=11\n
+price updated on Jul 31, 2022 - Sun 18:11 UTC
+
+check out https://my.ergoport.dev
+
+example portfolio: https://my.ergoport.dev/cgi-bin/ergoport.pl?a=11
 
 
 Users can also send a var at the end of the URL to get the coin count price:
@@ -60,11 +67,16 @@ cNETA: 0.029232245681382 in ADA
   ERG: $2.141342 in USD
 
 price updated on Aug 1, 2022 - Mon 3:42 UTC
+
 check out https://my.ergoport.dev
+
 example portfolio: https://my.ergoport.dev/cgi-bin/ergoport.pl?a=11
 
+
 The code for the GET programs are in Python and hosted here:
+
 Discord: https://replit.com/@andrehafner/myergoportdev?v=1
+
 Telegram: https://replit.com/@andrehafner/myergoportdev-telegram-bot?v=1
 
 
