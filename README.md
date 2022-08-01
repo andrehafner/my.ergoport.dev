@@ -21,12 +21,11 @@ To Do:
 2. Phone foramtting
 3. Password Resets
 
-
+_______________________  
 
 I've also written individual html outputs of all the coins that that telegram and discord bots can grab quick pricing without having to prune or chomp anything. Users can simply do a GET command to the page and they get the pricing data accurate to the minute.  
   
 Example: https://my.ergoport.dev/cgi-bin/epAnetaBTC.pl  
-
 will return:  
 ### CNETA/NETA Price Checker ###  
   
@@ -44,11 +43,10 @@ example portfolio: https://my.ergoport.dev/cgi-bin/ergoport.pl?a=11
 
   
   
-  
+_______________________  
   
 Users can also send a var at the end of the URL to get the coin count price:  
-https://my.ergoport.dev/cgi-bin/epAnetaBTC.pl?a=cneta1000  
-
+Example: https://my.ergoport.dev/cgi-bin/epAnetaBTC.pl?a=cneta1000  
 will return:  
 
 ### CNETA/NETA Price Checker ###  
@@ -70,7 +68,7 @@ example portfolio: https://my.ergoport.dev/cgi-bin/ergoport.pl?a=11
 
   
   
-  
+_______________________  
   
 The code for the GET programs are in Python and hosted here:  
 Discord: https://replit.com/@andrehafner/myergoportdev?v=1  
