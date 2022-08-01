@@ -45,7 +45,7 @@ my $html = qq{Content-Type: text/html
             <span id="terminal__prompt--bling">***PLEASE*** let me know if something isn't working!<br>
 These scripts output VERY simple HTML, so it should work on any browser.<br>
 They also rely on the API text feeds from ERGODEX and Minswap, which can go offline from time to time.<br><br>
-For comments and suggestions, feel free to write me on <a href="https://t.me/ergoport">Telegram</a> or on discord drehaf\#0090<br><br><br></span>
+For comments and suggestions, feel free to write me on <a href="https://t.me/ergoportdiscussions">Telegram</a> or on discord drehaf\#0090<br><br><br></span>
 
 
             <span id="terminal__prompt--bling"> <font color=\"#ff3300\"> <a href="https://my.ergoport.dev/cgi-bin/ergoportedit.pl"><font color=\"#ff3300\">edit your data</a>  

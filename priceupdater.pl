@@ -282,7 +282,7 @@ $ERGOPADresult =~ s/\,.*//;
 $EXILEresult =~ s/^.{116}//s;
 $EXILEresult =~ s/\,.*//;
 
-$PAIDEIAresult =~ s/^.{121}//s;
+$PAIDEIAresult =~ s/^.{119}//s;
 $PAIDEIAresult =~ s/\,.*//;
 
 $TERAHERTZresult =~ s/^.{121}//s;

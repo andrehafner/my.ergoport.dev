@@ -357,7 +357,7 @@ $totalsumCARDANO = ($array3[$CHVAR2] + $totalsumCARDANO);
 $array3[$CHVAR3] = sprintf("%.2f", $array3[$CHVAR3]);
 $array3[$CHVAR3] = format_number ($array3[$CHVAR3]);
 $array2[$CHVAR2] = format_number ($array2[$CHVAR2]);
-$array[$CHVAR] = sprintf("%.6f", $array[$CHVAR]);
+#$array[$CHVAR] = sprintf("%.6f", $array[$CHVAR]);
 $hosky = "<span id=\"terminal__prompt--bling\">HOSKY USD:<font color=\"#3399ff\">\$$array[$CHVAR] </font color=\"#3399ff\"> TT:<font color=\"#ffff00\">$array2[$CHVAR2]</font color=\"#ffff00\"> TUSD:<font color=\"#33cc33\">\$$array3[$CHVAR3]<br></span>";
 }
 
@@ -541,7 +541,7 @@ my $html = qq{Content-Type: text/html
             <span id="terminal__prompt--bling"><br>ERGO Data from Ergodex refreshed every minute,<br> last on:<font color=\"#696969\"> $array[7] UTC</font color=\"#696969\"></span>
             <span id="terminal__prompt--bling"><br>Cardano Data from Minswap refreshed every minute,<br> last on:<font color=\"#696969\"> $array[16] UTC<br></span>
 
-        <span id="terminal__prompt--bling"> <font color=\"#ff3300\"> <a href="https://my.ergoport.dev/cgi-bin/ergoport.pl?a=$id"><font color=\"#ff3300\"><br>PRICE IN USD</a> | <span id="terminal__prompt--bling"> <font color=\"#ff3300\"> <a href="https://my.ergoport.dev/cgi-bin/nativeergoport.pl?a=$id"><font color=\"#ff3300\">PRICE IN NATIVE TOKEN</a>
+        <span id="terminal__prompt--bling"> <font color=\"#ff3300\"> <a href="https://my.ergoport.dev/cgi-bin/ergoport.pl?a=$id"><font color=\"#ff3300\"><br>PRICE IN USD</a> | <span id="terminal__prompt--bling"> <font color=\"#ff3300\"> <a href="https://my.ergoport.dev/cgi-bin/nativeergoport.pl?a=$id"><font color=\"#ff3300\">PRICE IN NATIVE TOKEN</a> | <a href="https://my.ergoport.dev/cgi-bin/ergoportBN.pl?a=$id"><font color=\"#ff3300\">SIMPLE TOTAL</a>
             <span id="terminal__prompt--bling"><br>In Order: Current USD Price, Total Tokens, Total USD in your Tokens<br></span>
 
             <span id="terminal__prompt--bling"><br>**ERG Tokens**<br></span>

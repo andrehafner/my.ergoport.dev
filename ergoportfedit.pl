@@ -189,7 +189,7 @@ Edit any field, they will simply be added together on commit.
             <input type="text" name="migorengPLUS" maxlength="49">
             <label for="migorengPLUS"><b>Mi Goreng</b><b><b><br></label>
 
-            <span id="terminal__prompt--bling"><br><br><br><font color=\"#ff0000\">Input Numbers Only!</font color=\"#ff0000\"></span>
+            <span id="terminal__prompt--bling"><br><br><br><font color=\"#ff0000\">Input Numbers Only, periods are ok, no commas tho!</font color=\"#ff0000\"></span>
 
             <span id="terminal__prompt--location"><br>**Cardano Tokens**<br><br></span>
 
