@@ -70,6 +70,30 @@ example portfolio: https://my.ergoport.dev/cgi-bin/ergoport.pl?a=11
   
 _______________________  
   
+Users can send an additional var at the end of the URL to get the result in their own currency:  
+Example: https://my.ergoport.dev/cgi-bin/epAnetaBTC.pl?a=cneta1000EUR  
+will return:  
+
+### CNETA/NETA Price Checker ###  
+  
+1000 cNeta x $0.01445397 (cNeta Price EUR) = $14.45397 EUR 
+$14.45397 EUR / $0.48349068 (ADA Price EUR) = 29.8950333437658 ADA 
+Also = 6.99325313689712 in ERG (no ErgoDex swap pool yet)
+
+cNETA: $0.01445397 in EUR
+cNETA: 0.0298950333437658 in ADA
+cNETA: 0.00699325313689712 in ADA
+    ADA: $0.48349068 in EUR
+
+ NETA: $0.0051798 in EUR
+ NETA: 0.00250613863170462 in ERG
+ NETA: 0.0107133399138118 in ADA
+   ERG: $2.06684496 in EUR
+
+  
+  
+_______________________  
+
 The code for the GET programs are in Python and hosted here:  
 Discord: https://replit.com/@andrehafner/myergoportdev?v=1  
 Telegram: https://replit.com/@andrehafner/myergoportdev-telegram-bot?v=1  
