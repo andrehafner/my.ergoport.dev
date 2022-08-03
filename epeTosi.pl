@@ -73,6 +73,28 @@ while (my @row2 = $sth->fetchrow_array( ) )  {
 
 };
 
+#connect to MySQL database
+  $dbh   = DBI->connect ("DBI:mysql:database=$db:host=$host",
+  $user,
+  $password)
+  or die "Can't connect to database: $DBI::errstr\n";
+
+#prep the  mysql statement to get specific userdata row
+$sql = "SELECT * FROM currencydata where id='1'";
+
+#prepare the query
+$sth = $dbh->prepare($sql);
+
+#execute the query
+$sth->execute();
+
+## Retrieve the results of a row of data and put in an array
+$" = "<br>";
+while (my @rowCUR = $sth->fetchrow_array( ) )  {
+  push(@arrayCUR, @rowCUR);
+
+};
+
 
 #blank define of vars to use in if statments below
 my $CHVAR = '';
@@ -174,14 +196,411 @@ $array[$CHVAR] = sprintf("%.6f", $array[$CHVAR]);
 $ada = "$array[$CHVAR]";
 }
 
+
+my $ergADA = ($etosi / $ada);
+my $ergADA2 = ($ctosi / $erg);
+
+
+#price checker
 my $fullid = $id;
+my $idclean = $id;
+$idclean =~ s/[^0-9.]+//g;
+my $amountchecker = ($idclean * $etosi);
+my $amountcheckerTOKEN = ($amountchecker / $erg);
+my $amountchecker2 = ($idclean * $ctosi);
+my $amountcheckerTOKEN2 = ($amountchecker2 / $ada);
+my $cleanERGcount = $idclean;
+my $cleanERGcount2 = $idclean;
+
+#currency converters
+my $currency = "USD";
+my $currencycolumn = "";
+
+#if ($fullid =~ m/usd/) {
+#$currency = "USD";
+#$currencycolumn = "@arrayCUR[0]";      
+#}
+
+if ($fullid =~ m/jpy/) {
+$currency = "JPY";
+$currencycolumn = "@arrayCUR[1]";
+$etosi = ($etosi * $currencycolumn);
+$erg = ($erg * $currencycolumn);
+#$amountcheckerTOKEN = ($amountcheckerTOKEN * $currencycolumn);
+$amountchecker = ($amountchecker * $currencycolumn);
+}
+
+
+if ($fullid =~ m/eur/) {
+$currency = "EUR";
+$currencycolumn = "@arrayCUR[2]";
+$etosi = ($etosi * $currencycolumn);
+$erg = ($erg * $currencycolumn);
+#$amountcheckerTOKEN = ($amountcheckerTOKEN * $currencycolumn);
+$amountchecker = ($amountchecker * $currencycolumn);
+}
+
+if ($fullid =~ m/cad/) {
+$currency = "CAD";
+$currencycolumn = "@arrayCUR[3]";
+$etosi = ($etosi * $currencycolumn);
+$erg = ($erg * $currencycolumn);
+#$amountcheckerTOKEN = ($amountcheckerTOKEN * $currencycolumn);
+$amountchecker = ($amountchecker * $currencycolumn);
+}
+
+if ($fullid =~ m/rub/) {
+$currency = "RUB";
+$currencycolumn = "@arrayCUR[4]";
+$etosi = ($etosi * $currencycolumn);
+$erg = ($erg * $currencycolumn);
+#$amountcheckerTOKEN = ($amountcheckerTOKEN * $currencycolumn);
+$amountchecker = ($amountchecker * $currencycolumn);
+}
+
+if ($fullid =~ m/gbp/) {
+$currency = "GBP";
+$currencycolumn = "@arrayCUR[5]";
+$etosi = ($etosi * $currencycolumn);
+$erg = ($erg * $currencycolumn);
+#$amountcheckerTOKEN = ($amountcheckerTOKEN * $currencycolumn);
+$amountchecker = ($amountchecker * $currencycolumn);
+}
+
+if ($fullid =~ m/aud/) {
+$currency = "AUD";
+$currencycolumn = "@arrayCUR[6]";
+$etosi = ($etosi * $currencycolumn);
+$erg = ($erg * $currencycolumn);
+#$amountcheckerTOKEN = ($amountcheckerTOKEN * $currencycolumn);
+$amountchecker = ($amountchecker * $currencycolumn);
+}
+
+if ($fullid =~ m/chf/) {
+$currency = "CHF";
+$currencycolumn = "@arrayCUR[7]";
+$etosi = ($etosi * $currencycolumn);
+$erg = ($erg * $currencycolumn);
+#$amountcheckerTOKEN = ($amountcheckerTOKEN * $currencycolumn);
+$amountchecker = ($amountchecker * $currencycolumn);
+}
+
+if ($fullid =~ m/cnh/) {
+$currency = "CNH";
+$currencycolumn = "@arrayCUR[8]";
+$etosi = ($etosi * $currencycolumn);
+$erg = ($erg * $currencycolumn);
+#$amountcheckerTOKEN = ($amountcheckerTOKEN * $currencycolumn);
+$amountchecker = ($amountchecker * $currencycolumn);
+}
+
+if ($fullid =~ m/hkd/) {
+$currency = "HKD";
+$currencycolumn = "@arrayCUR[9]";
+$etosi = ($etosi * $currencycolumn);
+$erg = ($erg * $currencycolumn);
+#$amountcheckerTOKEN = ($amountcheckerTOKEN * $currencycolumn);
+$amountchecker = ($amountchecker * $currencycolumn);
+}
+
+if ($fullid =~ m/nzd/) {
+$currency = "NZD";
+$currencycolumn = "@arrayCUR[10]";
+$etosi = ($etosi * $currencycolumn);
+$erg = ($erg * $currencycolumn);
+#$amountcheckerTOKEN = ($amountcheckerTOKEN * $currencycolumn);
+$amountchecker = ($amountchecker * $currencycolumn);
+}
+
+if ($fullid =~ m/cny/) {
+$currency = "CNY";
+$currencycolumn = "@arrayCUR[11]";
+$etosi = ($etosi * $currencycolumn);
+$erg = ($erg * $currencycolumn);
+#$amountcheckerTOKEN = ($amountcheckerTOKEN * $currencycolumn);
+$amountchecker = ($amountchecker * $currencycolumn);
+}
+
+if ($fullid =~ m/sek/) {
+$currency = "SEK";
+$currencycolumn = "@arrayCUR[12]";
+$etosi = ($etosi * $currencycolumn);
+$erg = ($erg * $currencycolumn);
+#$amountcheckerTOKEN = ($amountcheckerTOKEN * $currencycolumn);
+$amountchecker = ($amountchecker * $currencycolumn);
+}
+
+if ($fullid =~ m/krw/) {
+$currency = "KRW";
+$currencycolumn = "@arrayCUR[13]";
+$etosi = ($etosi * $currencycolumn);
+$erg = ($erg * $currencycolumn);
+#$amountcheckerTOKEN = ($amountcheckerTOKEN * $currencycolumn);
+$amountchecker = ($amountchecker * $currencycolumn);
+}
+
+if ($fullid =~ m/sgd/) {
+$currency = "SGD";
+$currencycolumn = "@arrayCUR[14]";
+$etosi = ($etosi * $currencycolumn);
+$erg = ($erg * $currencycolumn);
+#$amountcheckerTOKEN = ($amountcheckerTOKEN * $currencycolumn);
+$amountchecker = ($amountchecker * $currencycolumn);
+}
+
+if ($fullid =~ m/nok/) {
+$currency = "NOK";
+$currencycolumn = "@arrayCUR[15]";
+$etosi = ($etosi * $currencycolumn);
+$erg = ($erg * $currencycolumn);
+#$amountcheckerTOKEN = ($amountcheckerTOKEN * $currencycolumn);
+$amountchecker = ($amountchecker * $currencycolumn);
+}
+
+if ($fullid =~ m/mxn/) {
+$currency = "MXN";
+$currencycolumn = "@arrayCUR[16]";
+$etosi = ($etosi * $currencycolumn);
+$erg = ($erg * $currencycolumn);
+#$amountcheckerTOKEN = ($amountcheckerTOKEN * $currencycolumn);
+$amountchecker = ($amountchecker * $currencycolumn);
+}
+
+if ($fullid =~ m/inr/) {
+$currency = "INR";
+$currencycolumn = "@arrayCUR[17]";
+$etosi = ($etosi * $currencycolumn);
+$erg = ($erg * $currencycolumn);
+#$amountcheckerTOKEN = ($amountcheckerTOKEN * $currencycolumn);
+$amountchecker = ($amountchecker * $currencycolumn);
+}
+
+if ($fullid =~ m/zar/) {
+$currency = "ZAR";
+$currencycolumn = "@arrayCUR[18]";
+$etosi = ($etosi * $currencycolumn);
+$erg = ($erg * $currencycolumn);
+#$amountcheckerTOKEN = ($amountcheckerTOKEN * $currencycolumn);
+$amountchecker = ($amountchecker * $currencycolumn);
+}
+
+if ($fullid =~ m/try/) {
+$currency = "TRY";
+$currencycolumn = "@arrayCUR[19]";
+$etosi = ($etosi * $currencycolumn);
+$erg = ($erg * $currencycolumn);
+#$amountcheckerTOKEN = ($amountcheckerTOKEN * $currencycolumn);
+$amountchecker = ($amountchecker * $currencycolumn);
+}
+
+if ($fullid =~ m/brl/) {
+$currency = "BRL";
+$currencycolumn = "@arrayCUR[20]";
+$etosi = ($etosi * $currencycolumn);
+$erg = ($erg * $currencycolumn);
+#$amountcheckerTOKEN = ($amountcheckerTOKEN * $currencycolumn);
+$amountchecker = ($amountchecker * $currencycolumn);
+}
+
+
+if ($fullid =~ m/jpy/) {
+$currency = "JPY";
+$currencycolumn = "@arrayCUR[1]";
+$ctosi = ($ctosi * $currencycolumn);
+$erg = ($erg * $currencycolumn);
+#$amountcheckerTOKEN = ($amountcheckerTOKEN * $currencycolumn);
+$amountchecker = ($amountchecker * $currencycolumn);
+}
+
+
+if ($fullid =~ m/eur/) {
+$currency = "EUR";
+$currencycolumn = "@arrayCUR[2]";
+$ctosi = ($ctosi * $currencycolumn);
+$erg = ($erg * $currencycolumn);
+#$amountcheckerTOKEN = ($amountcheckerTOKEN * $currencycolumn);
+$amountchecker = ($amountchecker * $currencycolumn);
+}
+
+if ($fullid =~ m/cad/) {
+$currency = "CAD";
+$currencycolumn = "@arrayCUR[3]";
+$ctosi = ($ctosi * $currencycolumn);
+$erg = ($erg * $currencycolumn);
+#$amountcheckerTOKEN = ($amountcheckerTOKEN * $currencycolumn);
+$amountchecker = ($amountchecker * $currencycolumn);
+}
+
+if ($fullid =~ m/rub/) {
+$currency = "RUB";
+$currencycolumn = "@arrayCUR[4]";
+$ctosi = ($ctosi * $currencycolumn);
+$erg = ($erg * $currencycolumn);
+#$amountcheckerTOKEN = ($amountcheckerTOKEN * $currencycolumn);
+$amountchecker = ($amountchecker * $currencycolumn);
+}
+
+if ($fullid =~ m/gbp/) {
+$currency = "GBP";
+$currencycolumn = "@arrayCUR[5]";
+$ctosi = ($ctosi * $currencycolumn);
+$erg = ($erg * $currencycolumn);
+#$amountcheckerTOKEN = ($amountcheckerTOKEN * $currencycolumn);
+$amountchecker = ($amountchecker * $currencycolumn);
+}
+
+if ($fullid =~ m/aud/) {
+$currency = "AUD";
+$currencycolumn = "@arrayCUR[6]";
+$ctosi = ($ctosi * $currencycolumn);
+$erg = ($erg * $currencycolumn);
+#$amountcheckerTOKEN = ($amountcheckerTOKEN * $currencycolumn);
+$amountchecker = ($amountchecker * $currencycolumn);
+}
+
+if ($fullid =~ m/chf/) {
+$currency = "CHF";
+$currencycolumn = "@arrayCUR[7]";
+$ctosi = ($ctosi * $currencycolumn);
+$erg = ($erg * $currencycolumn);
+#$amountcheckerTOKEN = ($amountcheckerTOKEN * $currencycolumn);
+$amountchecker = ($amountchecker * $currencycolumn);
+}
+
+if ($fullid =~ m/cnh/) {
+$currency = "CNH";
+$currencycolumn = "@arrayCUR[8]";
+$ctosi = ($ctosi * $currencycolumn);
+$erg = ($erg * $currencycolumn);
+#$amountcheckerTOKEN = ($amountcheckerTOKEN * $currencycolumn);
+$amountchecker = ($amountchecker * $currencycolumn);
+}
+
+if ($fullid =~ m/hkd/) {
+$currency = "HKD";
+$currencycolumn = "@arrayCUR[9]";
+$ctosi = ($ctosi * $currencycolumn);
+$erg = ($erg * $currencycolumn);
+#$amountcheckerTOKEN = ($amountcheckerTOKEN * $currencycolumn);
+$amountchecker = ($amountchecker * $currencycolumn);
+}
+
+if ($fullid =~ m/nzd/) {
+$currency = "NZD";
+$currencycolumn = "@arrayCUR[10]";
+$ctosi = ($ctosi * $currencycolumn);
+$erg = ($erg * $currencycolumn);
+#$amountcheckerTOKEN = ($amountcheckerTOKEN * $currencycolumn);
+$amountchecker = ($amountchecker * $currencycolumn);
+}
+
+if ($fullid =~ m/cny/) {
+$currency = "CNY";
+$currencycolumn = "@arrayCUR[11]";
+$ctosi = ($ctosi * $currencycolumn);
+$erg = ($erg * $currencycolumn);
+#$amountcheckerTOKEN = ($amountcheckerTOKEN * $currencycolumn);
+$amountchecker = ($amountchecker * $currencycolumn);
+}
+
+if ($fullid =~ m/sek/) {
+$currency = "SEK";
+$currencycolumn = "@arrayCUR[12]";
+$ctosi = ($ctosi * $currencycolumn);
+$erg = ($erg * $currencycolumn);
+#$amountcheckerTOKEN = ($amountcheckerTOKEN * $currencycolumn);
+$amountchecker = ($amountchecker * $currencycolumn);
+}
+
+if ($fullid =~ m/krw/) {
+$currency = "KRW";
+$currencycolumn = "@arrayCUR[13]";
+$ctosi = ($ctosi * $currencycolumn);
+$erg = ($erg * $currencycolumn);
+#$amountcheckerTOKEN = ($amountcheckerTOKEN * $currencycolumn);
+$amountchecker = ($amountchecker * $currencycolumn);
+}
+
+if ($fullid =~ m/sgd/) {
+$currency = "SGD";
+$currencycolumn = "@arrayCUR[14]";
+$ctosi = ($ctosi * $currencycolumn);
+$erg = ($erg * $currencycolumn);
+#$amountcheckerTOKEN = ($amountcheckerTOKEN * $currencycolumn);
+$amountchecker = ($amountchecker * $currencycolumn);
+}
+
+if ($fullid =~ m/nok/) {
+$currency = "NOK";
+$currencycolumn = "@arrayCUR[15]";
+$ctosi = ($ctosi * $currencycolumn);
+$erg = ($erg * $currencycolumn);
+#$amountcheckerTOKEN = ($amountcheckerTOKEN * $currencycolumn);
+$amountchecker = ($amountchecker * $currencycolumn);
+}
+
+if ($fullid =~ m/mxn/) {
+$currency = "MXN";
+$currencycolumn = "@arrayCUR[16]";
+$ctosi = ($ctosi * $currencycolumn);
+$erg = ($erg * $currencycolumn);
+#$amountcheckerTOKEN = ($amountcheckerTOKEN * $currencycolumn);
+$amountchecker = ($amountchecker * $currencycolumn);
+}
+
+if ($fullid =~ m/inr/) {
+$currency = "INR";
+$currencycolumn = "@arrayCUR[17]";
+$ctosi = ($ctosi * $currencycolumn);
+$erg = ($erg * $currencycolumn);
+#$amountcheckerTOKEN = ($amountcheckerTOKEN * $currencycolumn);
+$amountchecker = ($amountchecker * $currencycolumn);
+}
+
+if ($fullid =~ m/zar/) {
+$currency = "ZAR";
+$currencycolumn = "@arrayCUR[18]";
+$ctosi = ($ctosi * $currencycolumn);
+$erg = ($erg * $currencycolumn);
+#$amountcheckerTOKEN = ($amountcheckerTOKEN * $currencycolumn);
+$amountchecker = ($amountchecker * $currencycolumn);
+}
+
+if ($fullid =~ m/try/) {
+$currency = "TRY";
+$currencycolumn = "@arrayCUR[19]";
+$ctosi = ($ctosi * $currencycolumn);
+$erg = ($erg * $currencycolumn);
+#$amountcheckerTOKEN = ($amountcheckerTOKEN * $currencycolumn);
+$amountchecker = ($amountchecker * $currencycolumn);
+}
+
+if ($fullid =~ m/brl/) {
+$currency = "BRL";
+$currencycolumn = "@arrayCUR[20]";
+$ctosi = ($ctosi * $currencycolumn);
+$erg = ($erg * $currencycolumn);
+#$amountcheckerTOKEN = ($amountcheckerTOKEN * $currencycolumn);
+$amountchecker = ($amountchecker * $currencycolumn);
+}
+
+
+#calcualte currency
+
+
+my $adaERGTOTAL = ($ergADA * $cleanERGcount);
+my $adaERGTOTAL2 = ($ergADA2 * $cleanERGcount2);
+
+
+
 
 #price checker
 my $idclean = $id;
 $idclean =~ s/[^0-9.]+//g;
 my $amountchecker = ($idclean * $etosi);
 my $amountcheckerTOKEN = ($amountchecker / $erg);
-my $printamountchecker = "\n$idclean eTosi x \$$etosi (eTosi Price) = \$$amountchecker USD \n\$$amountchecker USD / \$$erg (ERG Price) = $amountcheckerTOKEN ERG \n";
+#my $printamountchecker = "\n$idclean eTosi x \$$etosi (eTosi Price) = \$$amountchecker USD \n\$$amountchecker USD / \$$erg (ERG Price) = $amountcheckerTOKEN ERG \n";
+my $printamountchecker = "\n$idclean eTosi x \$$etosi (eTosi Price $currency) = \$$amountchecker $currency \n\$$amountchecker $currency / \$$erg (ERG Price $currency) = $amountcheckerTOKEN ERG \nAlso = $adaERGTOTAL in ADA (no ErgoDex swap pool yet)\n";
 
 
 #price checker
@@ -189,7 +608,9 @@ my $idclean2 = $id;
 $idclean2 =~ s/[^0-9.]+//g;
 my $amountchecker2 = ($idclean2 * $ctosi);
 my $amountcheckerTOKEN2 = ($amountchecker2 / $ada);
-my $printamountchecker2 = "\n$idclean cTosi x \$$ctosi (cTosi Price) = \$$amountchecker2 USD \n\$$amountchecker2 USD / \$$ada (ADA Price) = $amountcheckerTOKEN2 ADA \n";
+#my $printamountchecker2 = "\n$idclean cTosi x \$$ctosi (cTosi Price) = \$$amountchecker2 USD \n\$$amountchecker2 USD / \$$ada (ADA Price) = $amountcheckerTOKEN2 ADA \n";
+my $printamountchecker2 = "\n$idclean cTosi x \$$ctosi (cTosi Price $currency) = \$$amountchecker2 $currency \n\$$amountchecker2 $currency / \$$ada (ADA Price $currency) = $amountcheckerTOKEN2 ADA \nAlso = $adaERGTOTAL2 in ERG (no ErgoDex swap pool yet)\n";
+
 
 $id =~ s/[^0-9.]+//g;
 if( $id eq ''){
@@ -211,18 +632,22 @@ print "### cTosi/eTosi Price Checker ###\n";
 print $printamountchecker;
 print $printamountchecker2;
 print "\n";
-print "cTosi: \$$ctosi in USD";
+print "cTosi: \$$ctosi in $currency";
 print "\n";
 print "cTosi: $ctosiADA in ADA";
 print "\n";
-print " ADA: \$$ada in USD";
+print "cTosi: $ergADA2 in ERG";
+print "\n";
+print " ADA: \$$ada in $currency";
 print "\n";
 print "\n";
-print "eTosi: \$$etosi in USD";
+print "eTosi: \$$etosi in $currency";
 print "\n";
 print "eTosi: $etosiERG in ERG";
 print "\n";
-print " ERG: \$$erg in USD";
+print "eTosi: $ergADA in ADA";
+print "\n";
+print " ERG: \$$erg in $currency";
 print "\n";
 print "\n";
 print "price updated on $array[16] UTC";
